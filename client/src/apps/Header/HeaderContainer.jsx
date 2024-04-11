@@ -140,7 +140,7 @@ export default function HeaderContent() {
 
       {/* <SelectLanguage /> */}
 
-      {location.pathname === '/' && <ChooseCurrency />}
+      {/* {location.pathname === '/' && <ChooseCurrency />} */}
     </Header>
   );
 }

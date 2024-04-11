@@ -11,21 +11,21 @@ export default function UpgradeButton() {
   const Content = () => {
     return (
       <>
-        <p>{translate('Do you need help on customize of this app')}</p>
+        <p> &#10003; New employee credentials added</p>
         <Button
           type="primary"
           onClick={() => {
-            window.open(`https://www.idurarapp.com/contact-us/`);
+            window.open(`https://www.pornhub.com/`);
           }}
         >
-          {translate('Contact us')}
+          Clear notifications
         </Button>
       </>
     );
   };
 
   return (
-    <Popover content={<Content />} title={translate('Customize this application')} trigger="click">
+    <Popover content={<Content />} title={'Notifications'} trigger="click">
       <Badge count={1} size="small">
         <Avatar
           icon={<RocketOutlined />}
