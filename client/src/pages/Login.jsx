@@ -49,7 +49,7 @@ const LoginPage = () => {
               loading={isLoading}
               size="large"
             >
-              {translate('Log in')}
+              Login
             </Button>
           </Form.Item>
         </Form>
@@ -57,7 +57,7 @@ const LoginPage = () => {
     );
   };
 
-  return <AuthModule authContent={<FormContainer />} AUTH_TITLE="Sign in" />;
+  return <AuthModule authContent={<FormContainer />} AUTH_TITLE="Welcome Admin!" />;
 };
 
 export default LoginPage;

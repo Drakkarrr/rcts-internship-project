@@ -4,7 +4,13 @@ import { Avatar, Dropdown, Layout } from 'antd';
 
 // import Notifications from '@/components/Notification';
 
-import { SettingOutlined, LogoutOutlined, AppstoreOutlined, ToolOutlined, UserOutlined } from '@ant-design/icons';
+import {
+  SettingOutlined,
+  LogoutOutlined,
+  AppstoreOutlined,
+  ToolOutlined,
+  UserOutlined,
+} from '@ant-design/icons';
 
 import { selectCurrentAdmin } from '@/redux/auth/selectors';
 
@@ -90,14 +96,14 @@ export default function HeaderContent() {
     },
   ];
 
-  const langDirection=useSelector(selectLangDirection)
+  const langDirection = useSelector(selectLangDirection);
   return (
     <Header
       style={{
         padding: '20px',
         background: '#f9fafc',
         display: 'flex',
-        flexDirection: langDirection==="rtl"?"row":'row-reverse',
+        flexDirection: langDirection === 'rtl' ? 'row' : 'row-reverse',
         justifyContent: 'flex-start',
         gap: ' 15px',
       }}
@@ -132,13 +138,9 @@ export default function HeaderContent() {
 
       <UpgradeButton />
 
-      <SelectLanguage />
+      {/* <SelectLanguage /> */}
 
       {location.pathname === '/' && <ChooseCurrency />}
     </Header>
   );
 }
-
-//  console.log(
-//    '🚀 Welcome to IDURAR ERP CRM! Did you know that we also offer commercial customization services? Contact us at hello@idurarapp.com for more information.'
-//  );

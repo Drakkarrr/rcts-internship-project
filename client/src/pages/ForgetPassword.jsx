@@ -41,16 +41,16 @@ const ForgetPassword = () => {
           <ForgetPasswordForm />
           <Form.Item>
             <Button type="primary" htmlType="submit" className="login-form-button" size="large">
-              {translate('Request new Password')}
+              Reset Password
             </Button>
-            {translate('Or')} <a href="/login"> {translate('already have account Login')} </a>
+            Already have account? <a href="/login">Login Now!</a>
           </Form.Item>
         </Form>
       </Loading>
     );
   };
   if (!isSuccess) {
-    return <AuthModule authContent={<FormContainer />} AUTH_TITLE="Forget Password" />;
+    return <AuthModule authContent={<FormContainer />} AUTH_TITLE="Forgot Password" />;
   } else {
     return (
       <Result
