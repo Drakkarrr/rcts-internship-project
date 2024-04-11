@@ -106,13 +106,13 @@ export default function DashboardModule() {
       result: quoteResult,
       isLoading: quoteLoading,
       entity: 'quote',
-      title: translate('proforma invoices'),
+      title: 'Test Quote',
     },
     {
       result: offerResult,
       isLoading: offerLoading,
       entity: 'offer',
-      title: translate('offers'),
+      title: 'Test Offer',
     },
   ];
 
@@ -149,7 +149,7 @@ export default function DashboardModule() {
             data={invoiceResult?.total}
           />
           <SummaryCard
-            title={translate('proforma invoices')}
+            title={'Test Data'}
             tagColor={'purple'}
             prefix={translate('This month')}
             isLoading={quoteLoading}
@@ -163,7 +163,7 @@ export default function DashboardModule() {
             data={offerResult?.total}
           />
           <SummaryCard
-            title={translate('Unpaid')}
+            title={'Test Data Unpaid'}
             tagColor={'red'}
             prefix={translate('Not Paid')}
             isLoading={invoiceLoading}
