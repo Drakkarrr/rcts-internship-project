@@ -1,6 +1,6 @@
 {
-  "name": "idurar-erp-crm",
-  "version": "4.0.0-beta.3",
+  "name": "rcts-appointment-system",
+  "version": "1",
   "engines": {
     "npm": "10.2.4",
     "node": "20.9.0"
@@ -48,15 +48,6 @@
     "@": "src"
   },
   "main": "server.js",
-  "author": "IDURAR",
-  "email": "hello@idurarapp.com",
-  "license": "Fair-code License",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/idurar/idurar-erp-crm/.git"
-  },
-  "bugs": {
-    "url": "https://github.com/idurar/idurar-erp-crm//issues"
-  },
-  "homepage": "https://github.com/idurar/idurar-erp-crm/#readme"
+  "author": "Drakkarrr",
+  "email": "drakkar.alpha00@gmail.com"
 }
