@@ -5,8 +5,9 @@ import { Button, Drawer, Layout, Menu } from 'antd';
 import { useAppContext } from '@/context/appContext';
 
 import useLanguage from '@/locale/useLanguage';
-import logoIcon from '@/style/images/logo-icon.svg';
-import logoText from '@/style/images/logo-text.svg';
+import logoIcon from '@/style/images/logo-icon.png';
+// import logoIcon from '@/style/images/logo-icon.svg';
+// import logoText from '@/style/images/logo-text.svg';
 
 import useResponsive from '@/hooks/useResponsive';
 
@@ -186,7 +187,7 @@ function Sidebar({ collapsible, isMobile = false }) {
     navMenu.collapse();
   };
 
-  const langDirection=useSelector(selectLangDirection)
+  const langDirection = useSelector(selectLangDirection);
   return (
     <Sider
       collapsible={collapsible}
@@ -197,13 +198,13 @@ function Sidebar({ collapsible, isMobile = false }) {
       style={{
         overflow: 'auto',
         height: '100vh',
-        direction:langDirection,
-        position:isMobile?"absolute":"relative",
+        direction: langDirection,
+        position: isMobile ? 'absolute' : 'relative',
         bottom: '20px',
         ...(!isMobile && {
           background: 'none',
           border: 'none',
-          [langDirection==="rtl"?"right":"left"]: '20px',
+          [langDirection === 'rtl' ? 'right' : 'left']: '20px',
           top: '20px',
           borderRadius: '8px',
         }),
@@ -217,9 +218,9 @@ function Sidebar({ collapsible, isMobile = false }) {
           cursor: 'pointer',
         }}
       >
-        <img src={logoIcon} alt="Logo" style={{ marginLeft: '-5px', height: '40px' }} />
+        <img src={logoIcon} alt="Logo" style={{ marginLeft: '-3px', height: '40px' }} />
 
-        {!showLogoApp && (
+        {/* {!showLogoApp && (
           <img
             src={logoText}
             alt="Logo"
@@ -229,7 +230,8 @@ function Sidebar({ collapsible, isMobile = false }) {
               height: '38px',
             }}
           />
-        )}
+        )} */}
+        <h2>CTS Logo</h2>
       </div>
       <Menu
         items={items}
@@ -239,7 +241,7 @@ function Sidebar({ collapsible, isMobile = false }) {
         style={{
           background: 'none',
           border: 'none',
-          width: 256,
+          width: 240,
         }}
       />
     </Sider>
@@ -255,7 +257,7 @@ function MobileSidebar() {
     setVisible(false);
   };
 
-  const langDirection=useSelector(selectLangDirection)
+  const langDirection = useSelector(selectLangDirection);
   return (
     <>
       <Button
@@ -263,9 +265,7 @@ function MobileSidebar() {
         size="large"
         onClick={showDrawer}
         className="mobile-sidebar-btn"
-
-        
-        style={{ [langDirection==="rtl"?"marginRight":"marginLeft"]: 25 }}
+        style={{ [langDirection === 'rtl' ? 'marginRight' : 'marginLeft']: 25 }}
       >
         <MenuOutlined style={{ fontSize: 18 }} />
       </Button>
@@ -275,16 +275,13 @@ function MobileSidebar() {
           boxShadow: 'none',
         }}
         style={{ backgroundColor: 'rgba(255, 255, 255, 0)' }}
-        placement={langDirection==="rtl"?"right":"left"}
-
+        placement={langDirection === 'rtl' ? 'right' : 'left'}
         closable={false}
         onClose={onClose}
         open={visible}
-
       >
         <Sidebar collapsible={false} isMobile={true} />
       </Drawer>
-      
     </>
   );
 }
