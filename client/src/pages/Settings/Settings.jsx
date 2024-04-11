@@ -29,7 +29,7 @@ export default function Settings() {
     },
     {
       key: 'company_settings',
-      label: translate('Company Settings'),
+      label: 'Company Details',
       icon: <TrophyOutlined />,
       children: <CompanySettings />,
     },
@@ -39,18 +39,18 @@ export default function Settings() {
       icon: <FileImageOutlined />,
       children: <CompanyLogoSettings />,
     },
-    {
-      key: 'currency_settings',
-      label: translate('Currency Settings'),
-      icon: <DollarOutlined />,
-      children: <MoneyFormatSettings />,
-    },
-    {
-      key: 'finance_settings',
-      label: translate('Finance Settings'),
-      icon: <CreditCardOutlined />,
-      children: <FinanceSettings />,
-    },
+    // {
+    //   key: 'currency_settings',
+    //   label: translate('Currency Settings'),
+    //   icon: <DollarOutlined />,
+    //   children: <MoneyFormatSettings />,
+    // },
+    // {
+    //   key: 'finance_settings',
+    //   label: translate('Finance Settings'),
+    //   icon: <CreditCardOutlined />,
+    //   children: <FinanceSettings />,
+    // },
   ];
 
   const pageTitle = translate('Settings');
