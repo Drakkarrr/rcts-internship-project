@@ -12,8 +12,8 @@ export default function EmployeeForm() {
   return (
     <>
       <Form.Item
-        name="name"
-        label={translate('first name')}
+        name="firstname"
+        label={'First Name'}
         rules={[
           {
             required: true,
@@ -22,9 +22,10 @@ export default function EmployeeForm() {
       >
         <Input />
       </Form.Item>
+
       <Form.Item
-        name="surname"
-        label={translate('last name')}
+        name="lastname"
+        label={'Last Name'}
         rules={[
           {
             required: true,
@@ -33,59 +34,10 @@ export default function EmployeeForm() {
       >
         <Input />
       </Form.Item>
-      <Form.Item
-        name="birthday"
-        label={translate('birthday')}
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <DatePicker placeholder={translate('select_date')} format={dateFormat} />
-      </Form.Item>
-      <Form.Item
-        name="birthplace"
-        label={translate('birthplace')}
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        name="gender"
-        label={translate('gender')}
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Select>
-          <Select.Option value="men">{translate('men')}</Select.Option>
-          <Select.Option value="women">{translate('women')}</Select.Option>
-        </Select>
-      </Form.Item>
-      <Form.Item
-        name="email"
-        label={translate('email')}
-        rules={[
-          {
-            type: 'email',
-          },
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+
       <Form.Item
         name="phone"
-        label={translate('phone')}
+        label={'Phone'}
         rules={[
           {
             required: true,
@@ -97,31 +49,10 @@ export default function EmployeeForm() {
       >
         <Input />
       </Form.Item>
-      <Form.Item
-        name="department"
-        label={translate('Department')}
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        name="position"
-        label={translate('Position')}
-        rules={[
-          {
-            required: true,
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+
       <Form.Item
         name="address"
-        label={translate('Address')}
+        label={'Address'}
         rules={[
           {
             required: true,
@@ -130,10 +61,57 @@ export default function EmployeeForm() {
       >
         <Input />
       </Form.Item>
+
       <Form.Item
-        name="state"
-        label={translate('State')}
+        name="gender"
+        label={'Gender'}
         rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Select>
+          <Select.Option value="male">Male</Select.Option>
+          <Select.Option value="female">Female</Select.Option>
+        </Select>
+      </Form.Item>
+
+      <Form.Item
+        name="birthday"
+        label={translate('birthday')}
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <DatePicker
+          placeholder={translate('select_date')}
+          format={dateFormat}
+          style={{ width: '100%' }}
+        />
+      </Form.Item>
+
+      <Form.Item
+        name="position"
+        label={'Position'}
+        rules={[
+          {
+            required: true,
+          },
+        ]}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        name="email"
+        label={'Email'}
+        rules={[
+          {
+            type: 'email',
+          },
           {
             required: true,
           },

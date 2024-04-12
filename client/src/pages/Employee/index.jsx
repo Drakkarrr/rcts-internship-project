@@ -8,55 +8,71 @@ export default function Employee() {
   const { dateFormat } = useDate();
   const entity = 'employee';
   const searchConfig = {
-    displayLabels: ['name', 'surname'],
-    searchFields: 'name,surname,birthday',
+    displayLabels: ['firstname', 'lastname'],
+    searchFields: 'firstname,lastname',
     outputValue: '_id',
   };
 
-  const deleteModalLabels = ['name', 'surname'];
+  const deleteModalLabels = ['firstname', 'lastname'];
 
   const dataTableColumns = [
     {
-      title: translate('first name'),
-      dataIndex: 'name',
+      title: 'First name',
+      dataIndex: 'firstname',
     },
     {
-      title: translate('last name'),
-      dataIndex: 'surname',
+      title: 'Last name',
+      dataIndex: 'lastname',
     },
     {
-      title: translate('Birthday'),
+      title: 'Phone',
+      dataIndex: 'phone',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Gender',
+      dataIndex: 'gender',
+    },
+    {
+      title: 'Birthday',
       dataIndex: 'birthday',
       render: (date) => {
         return dayjs(date).format(dateFormat);
       },
     },
     {
-      title: translate('Department'),
-      dataIndex: 'department',
-    },
-    {
-      title: translate('Position'),
+      title: 'Position',
       dataIndex: 'position',
     },
     {
-      title: translate('Phone'),
-      dataIndex: 'phone',
-    },
-    {
-      title: translate('Email'),
+      title: 'Email',
       dataIndex: 'email',
     },
   ];
 
   const readColumns = [
     {
-      title: translate('first name'),
-      dataIndex: 'name',
+      title: 'First name',
+      dataIndex: 'firstname',
     },
     {
-      title: translate('last name'),
-      dataIndex: 'surname',
+      title: 'Last name',
+      dataIndex: 'lastname',
+    },
+    {
+      title: 'Phone',
+      dataIndex: 'phone',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+    {
+      title: 'Gender',
+      dataIndex: 'gender',
     },
     {
       title: translate('Birthday'),
@@ -64,35 +80,11 @@ export default function Employee() {
       isDate: true,
     },
     {
-      title: translate('birthplace'),
-      dataIndex: 'birthplace',
-    },
-    {
-      title: translate('gender'),
-      dataIndex: 'gender',
-    },
-    {
-      title: translate('Department'),
-      dataIndex: 'department',
-    },
-    {
-      title: translate('Position'),
+      title: 'Position',
       dataIndex: 'position',
     },
     {
-      title: translate('address'),
-      dataIndex: 'address',
-    },
-    {
-      title: translate('state'),
-      dataIndex: 'state',
-    },
-    {
-      title: translate('Phone'),
-      dataIndex: 'phone',
-    },
-    {
-      title: translate('Email'),
+      title: 'Email',
       dataIndex: 'email',
     },
   ];

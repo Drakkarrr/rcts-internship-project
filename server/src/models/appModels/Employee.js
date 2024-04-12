@@ -11,167 +11,104 @@ const employeeSchema = new mongoose.Schema({
   },
 
   isAdmin: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
+
   firstname: {
     type: String,
     trim: true,
     required: true,
   },
+
   lastname: {
     type: String,
     trim: true,
     required: true,
   },
-  birthplace: String,
-  gender: String,
-  idCardNumber: {
-    type: String,
+
+  phone: {
+    type: Number,
     trim: true,
-  },
-  idCardType: String,
-  birthday: Date,
-  securitySocialNbr: String,
-  taxNumber: String,
-  nationality: {
-    type: String,
-    trim: true,
-  },
-  photo: {
-    type: String,
-    trim: true,
-  },
-  headerImage: {
-    type: String,
-    trim: true,
+    required: true,
   },
 
-  bankName: {
-    type: String,
-    trim: true,
-  },
-  bankIban: {
-    type: String,
-    trim: true,
-  },
-  bankSwift: {
-    type: String,
-    trim: true,
-  },
-  bankNumber: {
-    type: String,
-    trim: true,
-  },
-  bankRouting: {
-    type: String,
-    trim: true,
-  },
-  customField: [
-    {
-      fieldName: {
-        type: String,
-        trim: true,
-        lowercase: true,
-      },
-      fieldType: {
-        type: String,
-        trim: true,
-        lowercase: true,
-        default: 'string',
-      },
-      fieldValue: {},
-    },
-  ],
-  location: {
-    latitude: Number,
-    longitude: Number,
-  },
   address: {
     type: String,
+    trim: true,
+    required: true,
   },
-  city: {
-    type: String,
-  },
-  State: {
-    type: String,
-  },
-  postalCode: {
-    type: Number,
-  },
-  country: {
+
+  gender: String,
+
+  birthday: Date,
+
+  position: {
     type: String,
     trim: true,
+    required: true,
   },
-  phone: {
-    type: String,
-    trim: true,
-  },
-  otherPhone: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
+
   email: {
     type: String,
     trim: true,
     lowercase: true,
+    required: true,
   },
 
-  otherEmail: [
-    {
-      type: String,
-      trim: true,
-      lowercase: true,
-    },
-  ],
-  socialMedia: {
-    facebook: String,
-    instagram: String,
-    twitter: String,
-    linkedin: String,
-    tiktok: String,
-    youtube: String,
-    snapchat: String,
-  },
-  images: [
-    {
-      id: String,
-      name: String,
-      path: String,
-      description: String,
-      isPublic: {
-        type: Boolean,
-        default: false,
-      },
-    },
-  ],
-  files: [
-    {
-      id: String,
-      name: String,
-      path: String,
-      description: String,
-      isPublic: {
-        type: Boolean,
-        default: false,
-      },
-    },
-  ],
-  notes: String,
-  category: String,
-  status: String,
-  approved: {
-    type: Boolean,
-  },
-  verified: {
-    type: Boolean,
-  },
-  tags: [
-    {
-      type: String,
-      trim: true,
-      lowercase: true,
-    },
-  ],
+  // idCardNumber: {
+  //   type: String,
+  //   trim: true,
+  // },
+
+  // photo: {
+  //   type: String,
+  //   trim: true,
+  // },
+
+  // headerImage: {
+  //   type: String,
+  //   trim: true,
+  // },
+
+  // customField: [
+  //   {
+  //     fieldName: {
+  //       type: String,
+  //       trim: true,
+  //       lowercase: true,
+  //     },
+  //     fieldType: {
+  //       type: String,
+  //       trim: true,
+  //       lowercase: true,
+  //       default: 'string',
+  //     },
+  //     fieldValue: {},
+  //   },
+  // ],
+
+  // images: [
+  //   {
+  //     id: String,
+  //     name: String,
+  //     path: String,
+  //     description: String,
+  //     isPublic: {
+  //       type: Boolean,
+  //       default: true,
+  //     },
+  //   },
+  // ],
+  // files: [
+  //   {
+  //     id: String,
+  //     name: String,
+  //     path: String,
+  //     description: String,
+  //     isPublic: {
+  //       type: Boolean,
+  //       default: true,
+  //     },
+  //   },
+  // ],
   created: {
     type: Date,
     default: Date.now,
