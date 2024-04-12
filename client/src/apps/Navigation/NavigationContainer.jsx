@@ -72,6 +72,11 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <ShopOutlined />,
       label: <Link to={'/company'}>{translate('companies')}</Link>,
     },
+    // {
+    //   key: 'employees',
+    //   icon: <ShopOutlined />,
+    //   label: <Link to={'/employees'}>Employees</Link>,
+    // },
     {
       key: 'lead',
       icon: <FilterOutlined />,
@@ -99,6 +104,12 @@ function Sidebar({ collapsible, isMobile = false }) {
     },
 
     {
+      key: 'paymentMode',
+      icon: <CreditCardOutlined />,
+      label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,
+    },
+
+    {
       key: 'product',
       icon: <TagOutlined />,
       label: <Link to={'/product'}>{translate('products')}</Link>,
@@ -118,11 +129,11 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <ReconciliationOutlined />,
       label: <Link to={'/category/expenses'}>Expen Cat</Link>,
     },
-    {
-      key: 'employee',
-      icon: <UserOutlined />,
-      label: <Link to={'/employee'}>{translate('employee')}</Link>,
-    },
+    // {
+    //   key: 'employee',
+    //   icon: <UserOutlined />,
+    //   label: <Link to={'/employee'}>{translate('employee')}</Link>,
+    // },
     {
       key: 'admin',
       icon: <UserOutlined />,
@@ -148,27 +159,27 @@ function Sidebar({ collapsible, isMobile = false }) {
           key: 'profile',
           label: <Link to={'/profile'}>Profile</Link>,
         },
-        // {
-        //   key: 'currency',
-        //   label: <Link to={'/settings/currency'}>{translate('currencies')}</Link>,
-        // },
+        {
+          key: 'currency',
+          label: <Link to={'/settings/currency'}>{translate('currencies')}</Link>,
+        },
 
-        // {
-        //   key: 'emailTemplates',
-        //   label: <Link to={'/email'}>{translate('email_templates')}</Link>,
-        // },
-        // {
-        //   key: 'paymentMode',
-        //   label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,
-        // },
-        // {
-        //   key: 'taxes',
-        //   label: <Link to={'/taxes'}>{translate('taxes')}</Link>,
-        // },
-        // {
-        //   key: 'about',
-        //   label: <Link to={'/about'}>{translate('about')}</Link>,
-        // },
+        {
+          key: 'emailTemplates',
+          label: <Link to={'/email'}>{translate('email_templates')}</Link>,
+        },
+        {
+          key: 'paymentMode',
+          label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,
+        },
+        {
+          key: 'taxes',
+          label: <Link to={'/taxes'}>{translate('taxes')}</Link>,
+        },
+        {
+          key: 'about',
+          label: <Link to={'/about'}>{translate('about')}</Link>,
+        },
       ],
     },
   ];

@@ -45,6 +45,7 @@ const Product = lazy(() => import('@/pages/Product'));
 
 const People = lazy(() => import('@/pages/People'));
 const Company = lazy(() => import('@/pages/Company'));
+const Employees = lazy(() => import('@/pages/Employees'));
 
 const About = lazy(() => import('@/pages/About'));
 const Currency = lazy(() => import('@/pages/Currency'));
@@ -92,6 +93,10 @@ let routes = {
       path: '/company',
       element: <Company />,
     },
+    // {
+    //   path: '/employees',
+    //   element: <Employees />,
+    // },
     {
       path: '/product',
       element: <Product />,
@@ -156,10 +161,10 @@ let routes = {
       path: '/payment/update/:id',
       element: <PaymentUpdate />,
     },
-    {
-      path: '/employee',
-      element: <Employee />,
-    },
+    // {
+    //   path: '/employee',
+    //   element: <Employee />,
+    // },
     {
       path: '/admin',
       element: <Admin />,
