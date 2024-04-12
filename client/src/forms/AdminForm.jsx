@@ -102,14 +102,14 @@ export default function AdminForm({ isUpdateForm = false, isForAdminOwner = fals
         </Select>
       </Form.Item>
 
-      <Form.Item
+      {/* <Form.Item
         label={translate('enabled')}
         name="enabled"
         valuePropName={'checked'}
         initialValue={true}
       >
         <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} />
-      </Form.Item>
+      </Form.Item> */}
 
       {/* <Form.Item
         name="file"

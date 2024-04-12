@@ -43,30 +43,30 @@ export default function Admin() {
         return <Tag color={roleColr[text]}>{translate(role)}</Tag>;
       },
     },
-    {
-      title: translate('enabled'),
-      dataIndex: 'enabled',
-      onCell: () => ({
-        props: {
-          style: {
-            width: '60px',
-          },
-        },
-      }),
-      render: (text, record) => (
-        <Switch
-          checked={text}
-          checkedChildren={<CheckOutlined />}
-          unCheckedChildren={<CloseOutlined />}
-        />
-      ),
-    },
+    // {
+    //   title: translate('enabled'),
+    //   dataIndex: 'enabled',
+    //   onCell: () => ({
+    //     props: {
+    //       style: {
+    //         width: '60px',
+    //       },
+    //     },
+    //   }),
+    //   render: (text, record) => (
+    //     <Switch
+    //       checked={text}
+    //       checkedChildren={<CheckOutlined />}
+    //       unCheckedChildren={<CloseOutlined />}
+    //     />
+    //   ),
+    // },
   ];
 
   const Labels = {
-    PANEL_TITLE: translate('admin'),
-    DATATABLE_TITLE: translate('admin_list'),
-    ADD_NEW_ENTITY: translate('add_new_admin'),
+    PANEL_TITLE: 'User Management',
+    DATATABLE_TITLE: 'User Management Module',
+    ADD_NEW_ENTITY: 'Add New User',
     ENTITY_NAME: translate('admin'),
 
     RECORD_ENTITY: translate('record_payment'),

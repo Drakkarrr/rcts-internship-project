@@ -57,67 +57,67 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <DashboardOutlined />,
       label: <Link to={'/'}>{translate('dashboard')}</Link>,
     },
-    // {
-    //   key: 'customer',
-    //   icon: <CustomerServiceOutlined />,
-    //   label: <Link to={'/customer'}>{translate('customers')}</Link>,
-    // },
-    // {
-    //   key: 'people',
-    //   icon: <UserOutlined />,
-    //   label: <Link to={'/people'}>{translate('peoples')}</Link>,
-    // },
-    // {
-    //   key: 'company',
-    //   icon: <ShopOutlined />,
-    //   label: <Link to={'/company'}>{translate('companies')}</Link>,
-    // },
-    // {
-    //   key: 'lead',
-    //   icon: <FilterOutlined />,
-    //   label: <Link to={'/lead'}>{translate('leads')}</Link>,
-    // },
-    // {
-    //   key: 'offer',
-    //   icon: <FileOutlined />,
-    //   label: <Link to={'/offer'}>{translate('offers')}</Link>,
-    // },
-    // {
-    //   key: 'invoice',
-    //   icon: <ContainerOutlined />,
-    //   label: <Link to={'/invoice'}>{translate('invoices')}</Link>,
-    // },
-    // {
-    //   key: 'quote',
-    //   icon: <FileSyncOutlined />,
-    //   label: <Link to={'/quote'}>{translate('proforma invoices')}</Link>,
-    // },
-    // {
-    //   key: 'payment',
-    //   icon: <CreditCardOutlined />,
-    //   label: <Link to={'/payment'}>{translate('payments')}</Link>,
-    // },
+    {
+      key: 'customer',
+      icon: <CustomerServiceOutlined />,
+      label: <Link to={'/customer'}>{translate('customers')}</Link>,
+    },
+    {
+      key: 'people',
+      icon: <UserOutlined />,
+      label: <Link to={'/people'}>{translate('peoples')}</Link>,
+    },
+    {
+      key: 'company',
+      icon: <ShopOutlined />,
+      label: <Link to={'/company'}>{translate('companies')}</Link>,
+    },
+    {
+      key: 'lead',
+      icon: <FilterOutlined />,
+      label: <Link to={'/lead'}>{translate('leads')}</Link>,
+    },
+    {
+      key: 'offer',
+      icon: <FileOutlined />,
+      label: <Link to={'/offer'}>{translate('offers')}</Link>,
+    },
+    {
+      key: 'invoice',
+      icon: <ContainerOutlined />,
+      label: <Link to={'/invoice'}>{translate('invoices')}</Link>,
+    },
+    {
+      key: 'quote',
+      icon: <FileSyncOutlined />,
+      label: <Link to={'/quote'}>Proforma Inv</Link>,
+    },
+    {
+      key: 'payment',
+      icon: <CreditCardOutlined />,
+      label: <Link to={'/payment'}>{translate('payments')}</Link>,
+    },
 
-    // {
-    //   key: 'product',
-    //   icon: <TagOutlined />,
-    //   label: <Link to={'/product'}>{translate('products')}</Link>,
-    // },
-    // {
-    //   key: 'categoryproduct',
-    //   icon: <TagsOutlined />,
-    //   label: <Link to={'/category/product'}>{translate('products_category')}</Link>,
-    // },
-    // {
-    //   key: 'expenses',
-    //   icon: <WalletOutlined />,
-    //   label: <Link to={'/expenses'}>{translate('expenses')}</Link>,
-    // },
-    // {
-    //   key: 'expensesCategory',
-    //   icon: <ReconciliationOutlined />,
-    //   label: <Link to={'/category/expenses'}>{translate('expenses_Category')}</Link>,
-    // },
+    {
+      key: 'product',
+      icon: <TagOutlined />,
+      label: <Link to={'/product'}>{translate('products')}</Link>,
+    },
+    {
+      key: 'categoryproduct',
+      icon: <TagsOutlined />,
+      label: <Link to={'/category/product'}>Produ Cat</Link>,
+    },
+    {
+      key: 'expenses',
+      icon: <WalletOutlined />,
+      label: <Link to={'/expenses'}>{translate('expenses')}</Link>,
+    },
+    {
+      key: 'expensesCategory',
+      icon: <ReconciliationOutlined />,
+      label: <Link to={'/category/expenses'}>Expen Cat</Link>,
+    },
     {
       key: 'employee',
       icon: <UserOutlined />,
@@ -126,7 +126,7 @@ function Sidebar({ collapsible, isMobile = false }) {
     {
       key: 'admin',
       icon: <UserOutlined />,
-      label: <Link to={'/admin'}>{translate('admin')}</Link>,
+      label: <Link to={'/admin'}>User Management</Link>,
     },
 
     {
@@ -201,7 +201,7 @@ function Sidebar({ collapsible, isMobile = false }) {
       className="navigation"
       width={256}
       style={{
-        overflow: 'auto',
+        // overflowX: 'hidden',
         height: '100vh',
         direction: langDirection,
         position: isMobile ? 'absolute' : 'relative',
