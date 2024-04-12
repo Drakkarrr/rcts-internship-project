@@ -139,9 +139,14 @@ function Sidebar({ collapsible, isMobile = false }) {
         //   // icon: <TeamOutlined />,
         //   label: <Link to={'/admin'}>{translate('admin')}</Link>,
         // },
+
         {
           key: 'generalSettings',
           label: <Link to={'/settings'}>{translate('settings')}</Link>,
+        },
+        {
+          key: 'profile',
+          label: <Link to={'/profile'}>Profile</Link>,
         },
         // {
         //   key: 'currency',

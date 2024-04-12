@@ -15,7 +15,7 @@ export default function UpgradeButton() {
         <Button
           type="primary"
           onClick={() => {
-            window.open(`https://www.pornhub.com/`);
+            window.open(`https://www.google.com/`);
           }}
         >
           Clear notifications
