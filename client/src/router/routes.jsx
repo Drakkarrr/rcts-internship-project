@@ -57,6 +57,10 @@ let routes = {
       element: <Navigate to="/" />,
     },
     {
+      path: '/register',
+      element: <Navigate to="/register" />,
+    },
+    {
       path: '/verify/*',
       element: <Navigate to="/" />,
     },
