@@ -7,26 +7,33 @@ export const fields = {
     type: 'string',
     required: true,
   },
-  company: {
-    type: 'search',
-    entity: 'company',
-    renderAsTag: true,
-    redirectLabel: 'Add New Company',
-    withRedirect: true,
-    urlToRedirect: '/company',
-    displayLabels: ['name'],
-    searchFields: 'name',
-    dataIndex: ['company', 'name'],
-  },
-  country: {
-    type: 'country',
-  },
   phone: {
     type: 'phone',
+    required: true,
+  },
+  position: {
+    type: 'position',
+    required: true,
   },
   email: {
     type: 'email',
+    required: true,
   },
+  // company: {
+  //   type: 'search',
+  //   entity: 'company',
+  //   renderAsTag: true,
+  //   redirectLabel: 'Add New Company',
+  //   withRedirect: true,
+  //   urlToRedirect: '/company',
+  //   displayLabels: ['name'],
+  //   searchFields: 'name',
+  //   dataIndex: ['company', 'name'],
+  // },
+  // country: {
+  //   type: 'country',
+  // },
+
   // bio: {
   //   type: 'string',
   // },

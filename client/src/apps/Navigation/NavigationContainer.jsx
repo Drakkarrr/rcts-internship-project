@@ -63,11 +63,6 @@ function Sidebar({ collapsible, isMobile = false }) {
       label: <Link to={'/customer'}>{translate('customers')}</Link>,
     },
     {
-      key: 'people',
-      icon: <UserOutlined />,
-      label: <Link to={'/people'}>{translate('peoples')}</Link>,
-    },
-    {
       key: 'company',
       icon: <ShopOutlined />,
       label: <Link to={'/company'}>{translate('companies')}</Link>,
@@ -135,9 +130,14 @@ function Sidebar({ collapsible, isMobile = false }) {
     //   label: <Link to={'/employee'}>{translate('employee')}</Link>,
     // },
     {
+      key: 'employee',
+      icon: <UserOutlined />,
+      label: <Link to={'/employee'}>Employee</Link>,
+    },
+    {
       key: 'admin',
       icon: <UserOutlined />,
-      label: <Link to={'/admin'}>User Management</Link>,
+      label: <Link to={'/user-managemnet'}>User Management</Link>,
     },
 
     {

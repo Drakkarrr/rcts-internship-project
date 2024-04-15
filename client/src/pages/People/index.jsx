@@ -15,9 +15,9 @@ export default function People() {
   const deleteModalLabels = [' ', 'firstname', 'lastname'];
 
   const Labels = {
-    PANEL_TITLE: translate('person'),
-    DATATABLE_TITLE: translate('people_list'),
-    ADD_NEW_ENTITY: translate('add_new_person'),
+    PANEL_TITLE: 'Employee Management',
+    DATATABLE_TITLE: 'Employee Module',
+    ADD_NEW_ENTITY: 'Add New Employee',
     ENTITY_NAME: translate('person'),
   };
   const configPage = {

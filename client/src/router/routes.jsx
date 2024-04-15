@@ -86,7 +86,7 @@ let routes = {
       element: <Customer />,
     },
     {
-      path: '/people',
+      path: '/employee',
       element: <People />,
     },
     {
@@ -166,7 +166,7 @@ let routes = {
     //   element: <Employee />,
     // },
     {
-      path: '/admin',
+      path: '/user-managemnet',
       element: <Admin />,
     },
     {
