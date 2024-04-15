@@ -11,7 +11,8 @@ export default function Lead() {
     displayLabels: ['name'],
     searchFields: 'name',
   };
-  const deleteModalLabels = ['name'];
+
+  const deleteModalLabels = [' ', 'name'];
 
   const Labels = {
     PANEL_TITLE: translate('lead'),
