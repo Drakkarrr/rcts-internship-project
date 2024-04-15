@@ -135,9 +135,9 @@ function Sidebar({ collapsible, isMobile = false }) {
       label: <Link to={'/employee'}>Employee</Link>,
     },
     {
-      key: 'admin',
+      key: 'user-management',
       icon: <UserOutlined />,
-      label: <Link to={'/user-managemnet'}>User Management</Link>,
+      label: <Link to={'/user-management'}>User Management</Link>,
     },
 
     {

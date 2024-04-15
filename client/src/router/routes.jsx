@@ -166,7 +166,7 @@ let routes = {
     //   element: <Employee />,
     // },
     {
-      path: '/user-managemnet',
+      path: '/user-management',
       element: <Admin />,
     },
     {
