@@ -15,9 +15,9 @@ export default function ExpenseCategory() {
   const deleteModalLabels = [' ', 'name'];
 
   const Labels = {
-    PANEL_TITLE: translate('Expense_Category'),
-    DATATABLE_TITLE: translate('Expense_Category_list'),
-    ADD_NEW_ENTITY: translate('add_new_Expense_Category'),
+    PANEL_TITLE: 'Events Management',
+    DATATABLE_TITLE: 'Events Module',
+    ADD_NEW_ENTITY: 'Add New Event',
     ENTITY_NAME: translate('Expense_Category'),
   };
   const configPage = {

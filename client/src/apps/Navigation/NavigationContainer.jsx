@@ -115,14 +115,18 @@ function Sidebar({ collapsible, isMobile = false }) {
       label: <Link to={'/category/product'}>Produ Cat</Link>,
     },
     {
+      key: 'currency',
+      label: <Link to={'/settings/currency'}>{translate('currencies')}</Link>,
+    },
+    {
       key: 'expenses',
       icon: <WalletOutlined />,
       label: <Link to={'/expenses'}>{translate('expenses')}</Link>,
     },
     {
-      key: 'expensesCategory',
+      key: 'events',
       icon: <ReconciliationOutlined />,
-      label: <Link to={'/category/expenses'}>Expen Cat</Link>,
+      label: <Link to={'/events'}>Events </Link>,
     },
     // {
     //   key: 'employee',

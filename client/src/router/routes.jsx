@@ -235,7 +235,7 @@ let routes = {
       element: <Expense />,
     },
     {
-      path: 'category/expenses',
+      path: '/events',
       element: <ExpenseCategory />,
     },
     {
