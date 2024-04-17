@@ -19,7 +19,7 @@ export const fields = {
     type: 'boolean',
     required: true,
   },
-  created_on: {
+  created: {
     type: 'date',
     // disableForTable: true,
     disableForForm: true,

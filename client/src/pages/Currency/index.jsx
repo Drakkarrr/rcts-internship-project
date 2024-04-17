@@ -8,16 +8,16 @@ export default function Currency() {
   const translate = useLanguage();
   const entity = 'currency';
   const searchConfig = {
-    displayLabels: ['currency_name', 'currency_code', 'currency_symbol'],
-    searchFields: 'currency_name,currency_code,currency_symbol',
+    displayLabels: ['firstname', 'lastname', 'barangay'],
+    searchFields: 'firstname,lastname,barangay',
   };
 
-  const deleteModalLabels = [' ', 'currency_name'];
+  const deleteModalLabels = [' ', 'firstname', 'lastname'];
 
   const Labels = {
-    PANEL_TITLE: translate('currency'),
-    DATATABLE_TITLE: translate('currency_list'),
-    ADD_NEW_ENTITY: translate('add_new_currency'),
+    PANEL_TITLE: 'Requestor Management',
+    DATATABLE_TITLE: 'Requestor Module',
+    ADD_NEW_ENTITY: 'Add New Requestor',
     ENTITY_NAME: translate('currency'),
   };
   const configPage = {

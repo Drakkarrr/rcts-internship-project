@@ -114,19 +114,21 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <TagsOutlined />,
       label: <Link to={'/category/product'}>Produ Cat</Link>,
     },
-    {
-      key: 'currency',
-      label: <Link to={'/settings/currency'}>{translate('currencies')}</Link>,
-    },
+
     {
       key: 'expenses',
       icon: <WalletOutlined />,
       label: <Link to={'/expenses'}>{translate('expenses')}</Link>,
     },
     {
+      key: 'requestor',
+      icon: <CreditCardOutlined />,
+      label: <Link to={'/requestor'}>Requestor</Link>,
+    },
+    {
       key: 'events',
       icon: <ReconciliationOutlined />,
-      label: <Link to={'/events'}>Events </Link>,
+      label: <Link to={'/events'}>Events</Link>,
     },
     // {
     //   key: 'employee',
