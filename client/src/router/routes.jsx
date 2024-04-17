@@ -198,7 +198,7 @@ let routes = {
       element: <EmailUpdate />,
     },
     {
-      path: '/settings/currency',
+      path: '/requestor',
       element: <Currency />,
     },
 

@@ -6,26 +6,40 @@ export default function CurrencyForm({ isUpdateForm = false }) {
   return (
     <>
       <Form.Item
-        label="Currency Name"
-        name="name"
+        label={translate('Manager Last Name')}
+        name="managerSurname"
         rules={[
           {
             required: true,
-            message: 'Please input your currency name!',
+          },
+          {
+            validator: validateEmptyString,
+          },
+        ]}
+        style={{
+          display: 'inline-block',
+          width: 'calc(50%)',
+          paddingLeft: '5px',
+        }}
+      >
+        <Input />
+      </Form.Item>
+
+      <Form.Item
+        label="First Name"
+        name="firstname"
+        rules={[
+          {
+            required: true,
+            message: 'Please input your First name!',
           },
         ]}
       >
         <Input />
       </Form.Item>
       <Form.Item
-        label="Symbol"
-        name="symbol"
-        rules={[
-          {
-            required: true,
-            message: 'Please input your surname!',
-          },
-        ]}
+        label="Middle Name"
+        name="middlename"
         style={{
           display: 'inline-block',
           width: 'calc(50%)',
