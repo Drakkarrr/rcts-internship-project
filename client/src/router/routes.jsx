@@ -231,7 +231,7 @@ let routes = {
       element: <OfferUpdate />,
     },
     {
-      path: '/expenses',
+      path: '/appointments',
       element: <Expense />,
     },
     {
