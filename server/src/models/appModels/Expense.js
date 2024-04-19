@@ -15,6 +15,12 @@ const schema = new mongoose.Schema({
     trim: true,
     required: true,
   },
+  requestor: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'Currency',
+    autopopulate: true,
+    required: true,
+  },
   description: {
     type: String,
   },
@@ -48,11 +54,11 @@ const schema = new mongoose.Schema({
   total: {
     type: Number,
   },
-  currency: {
-    type: String,
-    uppercase: true,
-    required: true,
-  },
+  // currency: {
+  //   type: String,
+  //   uppercase: true,
+  //   required: true,
+  // },
   paymentMode: {
     type: mongoose.Schema.ObjectId,
     ref: 'PaymentMode',

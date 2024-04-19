@@ -1,4 +1,15 @@
 export const fields = {
+  requestor: {
+    type: 'selectCurrency',
+    required: true,
+  },
+  paymentMode: {
+    type: 'async',
+    label: 'Payment Mode',
+    displayLabels: ['paymentMode', 'name'],
+    dataIndex: ['paymentMode', 'name'],
+    entity: 'paymentmode',
+  },
   name: {
     type: 'string',
     required: true,
@@ -11,9 +22,9 @@ export const fields = {
     entity: 'expensecategory',
     required: true,
   },
-  currency: {
-    type: 'selectCurrency',
-  },
+  // currency: {
+  //   type: 'selectCurrency',
+  // },
   total: {
     type: 'currency',
     required: true,
