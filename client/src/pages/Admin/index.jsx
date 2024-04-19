@@ -39,7 +39,7 @@ export default function Admin() {
       title: translate('role'),
       dataIndex: 'role',
       render: (text, record) => {
-        const role = text === 'owner' ? 'Account owner' : text === 'admin' ? 'super admin' : text;
+        const role = text === 'owner' ? 'Super Admin' : text === 'admin' ? 'super admin' : text;
         return <Tag color={roleColr[text]}>{translate(role)}</Tag>;
       },
     },

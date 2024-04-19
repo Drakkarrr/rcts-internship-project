@@ -8,7 +8,7 @@ const adminSchema = new Schema({
   },
   enabled: {
     type: Boolean,
-    default: false,
+    default: true,
   },
 
   email: {
@@ -29,7 +29,8 @@ const adminSchema = new Schema({
   },
   role: {
     type: String,
-    default: 'employee',
+    default: 'admin',
+    // enum: ['owner', 'admin', 'employee'],
     enum: ['owner', 'admin', 'manager', 'employee', 'create_only', 'read_only'],
   },
 });

@@ -82,10 +82,10 @@ export default function AdminForm({ isUpdateForm = false, isForAdminOwner = fals
       >
         <Select>
           <Select.Option value="owner" disabled={!isForAdminOwner}>
-            {translate('Account owner')}
+            Super Admin
           </Select.Option>
           <Select.Option value="admin" disabled={isForAdminOwner}>
-            {translate('super_admin')}
+            {translate('admin')}
           </Select.Option>
           <Select.Option value="manager" disabled={isForAdminOwner}>
             {translate('manager')}
@@ -105,7 +105,7 @@ export default function AdminForm({ isUpdateForm = false, isForAdminOwner = fals
       {/* <Form.Item
         label={translate('enabled')}
         name="enabled"
-        valuePropName={'checked'}
+        valuePropName={'c ecked'}
         initialValue={true}
       >
         <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} />
