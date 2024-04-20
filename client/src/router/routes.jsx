@@ -82,7 +82,7 @@ let routes = {
       element: <Dashboard />,
     },
     {
-      path: '/customer',
+      path: '/clients',
       element: <Customer />,
     },
     {

@@ -57,20 +57,15 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <DashboardOutlined />,
       label: <Link to={'/'}>{translate('dashboard')}</Link>,
     },
-    // {
-    //   key: 'customer',
-    //   icon: <CustomerServiceOutlined />,
-    //   label: <Link to={'/customer'}>{translate('customers')}</Link>,
-    // },
+    {
+      key: 'customer',
+      icon: <CustomerServiceOutlined />,
+      label: <Link to={'/clients'}>Clients</Link>,
+    },
     // {
     //   key: 'company',
     //   icon: <ShopOutlined />,
     //   label: <Link to={'/company'}>{translate('companies')}</Link>,
-    // },
-    // {
-    //   key: 'employees',
-    //   icon: <ShopOutlined />,
-    //   label: <Link to={'/employees'}>Employees</Link>,
     // },
     // {
     //   key: 'lead',
@@ -130,11 +125,6 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <ReconciliationOutlined />,
       label: <Link to={'/events'}>Events</Link>,
     },
-    // {
-    //   key: 'employee',
-    //   icon: <UserOutlined />,
-    //   label: <Link to={'/employee'}>{translate('employee')}</Link>,
-    // },
     {
       key: 'employee',
       icon: <UserOutlined />,
