@@ -15,12 +15,12 @@ const schema = new mongoose.Schema({
     required: true,
   },
   description: String,
-  productCategory: {
-    type: mongoose.Schema.ObjectId,
-    ref: 'ProductCategory',
-    required: true,
-    autopopulate: true,
-  },
+  // productCategory: {
+  //   type: mongoose.Schema.ObjectId,
+  //   ref: 'ProductCategory',
+  //   required: true,
+  //   autopopulate: true,
+  // },
 
   created: {
     type: Date,

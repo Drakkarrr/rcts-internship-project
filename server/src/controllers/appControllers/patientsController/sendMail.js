@@ -1,8 +1,8 @@
 const fs = require('fs');
 const custom = require('@/controllers/pdfController');
-const { SendPaymentReceipt } = require('@/emailTemplate/SendEmailTemplate');
+const { SendpatientsReceipt } = require('@/emailTemplate/SendEmailTemplate');
 const mongoose = require('mongoose');
-const PaymentModel = mongoose.model('Payment');
+const patientsModel = mongoose.model('patients');
 const { Resend } = require('resend');
 const { loadSettings } = require('@/middlewares/settings');
 const { useAppSettings } = require('@/settings');
@@ -15,10 +15,12 @@ const mail = async (req, res) => {
     throw { name: 'ValidationError' };
   }
 
-  const result = await PaymentModel.findOne({
-    _id: id,
-    removed: false,
-  }).exec();
+  const result = await patientsModel
+    .findOne({
+      _id: id,
+      removed: false,
+    })
+    .exec();
 
   // Throw error if no result
   if (!result) {
@@ -38,7 +40,7 @@ const mail = async (req, res) => {
     });
   }
 
-  const modelName = 'Payment';
+  const modelName = 'patients';
 
   const fileId = modelName.toLowerCase() + '-' + result._id + '.pdf';
   const folderPath = modelName.toLowerCase();
@@ -56,14 +58,15 @@ const mail = async (req, res) => {
       });
 
       if (mailId) {
-        PaymentModel.findByIdAndUpdate({ _id: id, removed: false }, { status: 'sent' })
+        patientsModel
+          .findByIdAndUpdate({ _id: id, removed: false }, { status: 'sent' })
           .exec()
           .then((data) => {
             // Returning successfull response
             return res.status(200).json({
               success: true,
               result: mailId,
-              message: `Successfully sent Payment to ${email}`,
+              message: `Successfully sent patients to ${email}`,
             });
           });
       }
@@ -85,15 +88,15 @@ const sendViaApi = async ({ email, name, targetLocation }) => {
   const { data } = await resend.emails.send({
     from: idurar_app_email,
     to: email,
-    subject: 'Payment receipt From ' + company_name,
+    subject: 'patients receipt From ' + company_name,
     reply_to: idurar_app_company_email,
     attachments: [
       {
-        filename: 'Payment.pdf',
+        filename: 'patients.pdf',
         content: attatchedFile,
       },
     ],
-    html: SendPaymentReceipt({ name, title: 'Payment receipt From ' + company_name }),
+    html: SendpatientsReceipt({ name, title: 'patients receipt From ' + company_name }),
   });
 
   return data;

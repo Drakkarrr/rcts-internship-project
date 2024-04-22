@@ -6,12 +6,12 @@ export const fields = {
   description: {
     type: 'textarea',
   },
-  productCategory: {
-    type: 'async',
-    label: 'product Category',
-    displayLabels: ['productCategory', 'name'],
-    dataIndex: ['productCategory', 'name'],
-    entity: 'productcategory',
-    required: true,
-  },
+  // productCategory: {
+  //   type: 'async',
+  //   label: 'product Category',
+  //   displayLabels: ['productCategory', 'name'],
+  //   dataIndex: ['productCategory', 'name'],
+  //   entity: 'productcategory',
+  //   required: true,
+  // },
 };

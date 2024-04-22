@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Model = mongoose.model('Payment');
+const Model = mongoose.model('Patients');
 const Invoice = mongoose.model('Invoice');
 const custom = require('@/controllers/pdfController');
 
@@ -41,7 +41,7 @@ const create = async (req, res) => {
 
   const result = await Model.create(req.body);
 
-  const fileId = 'payment-' + result._id + '.pdf';
+  const fileId = 'patients-' + result._id + '.pdf';
   const updatePath = await Model.findOneAndUpdate(
     {
       _id: result._id.toString(),
@@ -54,10 +54,10 @@ const create = async (req, res) => {
   ).exec();
   // Returning successfull response
 
-  const { _id: paymentId, amount } = result;
+  const { _id: patientsId, amount } = result;
   const { id: invoiceId, total, discount, credit } = currentInvoice;
 
-  let paymentStatus =
+  let patientsStatus =
     calculate.sub(total, discount) === calculate.add(credit, amount)
       ? 'paid'
       : calculate.add(credit, amount) > 0
@@ -67,9 +67,9 @@ const create = async (req, res) => {
   const invoiceUpdate = await Invoice.findOneAndUpdate(
     { _id: req.body.invoice },
     {
-      $push: { payment: paymentId.toString() },
+      $push: { patients: patientsId.toString() },
       $inc: { credit: amount },
-      $set: { paymentStatus: paymentStatus },
+      $set: { patientsStatus: patientsStatus },
     },
     {
       new: true, // return the new result instead of the old one
@@ -80,7 +80,7 @@ const create = async (req, res) => {
   return res.status(200).json({
     success: true,
     result: updatePath,
-    message: 'Payment Invoice created successfully',
+    message: 'Patients Invoice created successfully',
   });
 };
 

@@ -4,9 +4,9 @@ import { fields } from './config';
 
 import useLanguage from '@/locale/useLanguage';
 
-export default function Product() {
+export default function Patients() {
   const translate = useLanguage();
-  const entity = 'product';
+  const entity = 'patients';
   const searchConfig = {
     displayLabels: ['name'],
     searchFields: 'name',
@@ -18,7 +18,7 @@ export default function Product() {
     PANEL_TITLE: 'Patients',
     DATATABLE_TITLE: 'Patients List',
     ADD_NEW_ENTITY: 'Add New Patients',
-    ENTITY_NAME: 'Patients',
+    ENTITY_NAME: 'patients',
   };
   const configPage = {
     entity,

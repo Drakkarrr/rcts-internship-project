@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Model = mongoose.model('Payment');
+const Model = mongoose.model('Patients');
 const Invoice = mongoose.model('Invoice');
 const custom = require('@/controllers/pdfController');
 
@@ -15,13 +15,13 @@ const update = async (req, res) => {
     });
   }
   // Find document by id and updates with the required fields
-  const previousPayment = await Model.findOne({
+  const previousPatients = await Model.findOne({
     _id: req.params.id,
     removed: false,
   });
 
-  const { amount: previousAmount } = previousPayment;
-  const { id: invoiceId, total, discount, credit: previousCredit } = previousPayment.invoice;
+  const { amount: previousAmount } = previousPatients;
+  const { id: invoiceId, total, discount, credit: previousCredit } = previousPatients.invoice;
 
   const { amount: currentAmount } = req.body;
 
@@ -37,7 +37,7 @@ const update = async (req, res) => {
     });
   }
 
-  let paymentStatus =
+  let patientsStatus =
     calculate.sub(total, discount) === calculate.add(previousCredit, changedAmount)
       ? 'paid'
       : calculate.add(previousCredit, changedAmount) > 0
@@ -49,7 +49,7 @@ const update = async (req, res) => {
     number: req.body.number,
     date: req.body.date,
     amount: req.body.amount,
-    paymentMode: req.body.paymentMode,
+    patientsMode: req.body.patientsMode,
     ref: req.body.ref,
     description: req.body.description,
     updated: updatedDate,
@@ -68,7 +68,7 @@ const update = async (req, res) => {
     {
       $inc: { credit: changedAmount },
       $set: {
-        paymentStatus: paymentStatus,
+        patientsStatus: patientsStatus,
       },
     },
     {
@@ -79,7 +79,7 @@ const update = async (req, res) => {
   return res.status(200).json({
     success: true,
     result,
-    message: 'Successfully updated the Payment ',
+    message: 'Successfully updated the Patients ',
   });
 };
 

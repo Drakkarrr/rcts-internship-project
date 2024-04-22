@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
-const Model = mongoose.model('Payment');
+const Model = mongoose.model('Patients');
 const Invoice = mongoose.model('Invoice');
 
 const remove = async (req, res) => {
   // Find document by id and updates with the required fields
-  const previousPayment = await Model.findOne({
+  const previousPatients = await Model.findOne({
     _id: req.params.id,
     removed: false,
   });
 
-  if (!previousPayment) {
+  if (!previousPatients) {
     return res.status(404).json({
       success: false,
       result: null,
@@ -18,8 +18,8 @@ const remove = async (req, res) => {
     });
   }
 
-  const { _id: paymentId, amount: previousAmount } = previousPayment;
-  const { id: invoiceId, total, discount, credit: previousCredit } = previousPayment.invoice;
+  const { _id: patientsId, amount: previousAmount } = previousPatients;
+  const { id: invoiceId, total, discount, credit: previousCredit } = previousPatients.invoice;
 
   // Find the document by id and delete it
   let updates = {
@@ -35,7 +35,7 @@ const remove = async (req, res) => {
   ).exec();
   // If no results found, return document not found
 
-  let paymentStatus =
+  let patientsStatus =
     total - discount === previousCredit - previousAmount
       ? 'paid'
       : previousCredit - previousAmount > 0
@@ -46,11 +46,11 @@ const remove = async (req, res) => {
     { _id: invoiceId },
     {
       $pull: {
-        payment: paymentId,
+        patients: patientsId,
       },
       $inc: { credit: -previousAmount },
       $set: {
-        paymentStatus: paymentStatus,
+        patientsStatus: patientsStatus,
       },
     },
     {

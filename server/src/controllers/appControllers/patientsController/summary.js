@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const moment = require('moment');
 
-const Model = mongoose.model('Payment');
+const Model = mongoose.model('Patients');
 const { loadSettings } = require('@/middlewares/settings');
 const { checkCurrency } = require('@/utils/currency');
 
@@ -68,7 +68,7 @@ const summary = async (req, res) => {
   return res.status(200).json({
     success: true,
     result: result.length > 0 ? result[0] : { count: 0, total: 0 },
-    message: `Successfully fetched the summary of payment invoices for the last ${defaultType}`,
+    message: `Successfully fetched the summary of patients invoices for the last ${defaultType}`,
   });
 };
 

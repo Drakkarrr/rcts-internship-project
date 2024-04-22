@@ -11,7 +11,7 @@ const controllerDirectories = globSync(pattern).map((filePath) => {
 
 const appControllers = () => {
   const controllers = {};
-  const hasCustomControllers = [];
+  const hasCustomControllers = ['patientsController'];
 
   controllerDirectories.forEach((controllerName) => {
     try {
