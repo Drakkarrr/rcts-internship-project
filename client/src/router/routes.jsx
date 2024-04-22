@@ -9,6 +9,7 @@ const Dashboard = lazy(() => import('@/pages/Dashboard'));
 const Customer = lazy(() => import('@/pages/Customer'));
 const Inventory = lazy(() => import('@/pages/Inventory'));
 const Order = lazy(() => import('@/pages/Order'));
+const Patients = lazy(() => import('@/pages/Patients'));
 const Invoice = lazy(() => import('@/pages/Invoice'));
 const InvoiceCreate = lazy(() => import('@/pages/Invoice/InvoiceCreate'));
 
@@ -93,10 +94,10 @@ let routes = {
       path: '/company',
       element: <Company />,
     },
-    // {
-    //   path: '/employees',
-    //   element: <Employees />,
-    // },
+    {
+      path: '/patients',
+      element: <Patients />,
+    },
     {
       path: '/product',
       element: <Product />,
