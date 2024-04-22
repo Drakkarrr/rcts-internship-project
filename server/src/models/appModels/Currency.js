@@ -28,6 +28,7 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  company: { type: mongoose.Schema.ObjectId, ref: 'Company' },
   // photo: {
   //   type: String,
   //   trim: true,

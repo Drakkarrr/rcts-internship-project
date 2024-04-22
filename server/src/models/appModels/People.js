@@ -45,6 +45,11 @@ const schema = new mongoose.Schema({
   //   default: false,
   // },
   company: { type: mongoose.Schema.ObjectId, ref: 'Company' },
+  paymentMode: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'PaymentMode',
+    autopopulate: true,
+  },
   bio: String,
   idCardNumber: {
     type: String,

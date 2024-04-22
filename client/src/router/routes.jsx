@@ -9,6 +9,7 @@ const Dashboard = lazy(() => import('@/pages/Dashboard'));
 const Customer = lazy(() => import('@/pages/Customer'));
 const Inventory = lazy(() => import('@/pages/Inventory'));
 const Order = lazy(() => import('@/pages/Order'));
+const Patients = lazy(() => import('@/pages/Patients'));
 const Invoice = lazy(() => import('@/pages/Invoice'));
 const InvoiceCreate = lazy(() => import('@/pages/Invoice/InvoiceCreate'));
 
@@ -40,8 +41,12 @@ const OfferUpdate = lazy(() => import('@/pages/Offer/OfferUpdate'));
 
 const ExpenseCategory = lazy(() => import('@/pages/ExpenseCategory'));
 const Expense = lazy(() => import('@/pages/Expense'));
+
 const ProductCategory = lazy(() => import('@/pages/ProductCategory'));
 const Product = lazy(() => import('@/pages/Product'));
+
+const ProdukDog = lazy(() => import('@/pages/ProdukDog'));
+const Produk = lazy(() => import('@/pages/Produk'));
 
 const People = lazy(() => import('@/pages/People'));
 const Company = lazy(() => import('@/pages/Company'));
@@ -82,7 +87,7 @@ let routes = {
       element: <Dashboard />,
     },
     {
-      path: '/customer',
+      path: '/clients',
       element: <Customer />,
     },
     {
@@ -93,10 +98,10 @@ let routes = {
       path: '/company',
       element: <Company />,
     },
-    // {
-    //   path: '/employees',
-    //   element: <Employees />,
-    // },
+    {
+      path: '/patients',
+      element: <Patients />,
+    },
     {
       path: '/product',
       element: <Product />,
@@ -104,6 +109,14 @@ let routes = {
     {
       path: '/category/product',
       element: <ProductCategory />,
+    },
+    {
+      path: '/produk',
+      element: <Produk />,
+    },
+    {
+      path: '/categoryproduk',
+      element: <ProdukDog />,
     },
     {
       path: '/inventory',
