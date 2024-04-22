@@ -9,16 +9,15 @@ export default function Patients() {
   const entity = 'patients';
   const searchConfig = {
     displayLabels: ['name'],
-    searchFields: 'name',
+    searchFields: 'name,phone,eamil',
   };
-
-  const deleteModalLabels = [' ', 'name'];
+  const deleteModalLabels = ['name'];
 
   const Labels = {
-    PANEL_TITLE: 'Patients',
-    DATATABLE_TITLE: 'Patients List',
-    ADD_NEW_ENTITY: 'Add New Patients',
-    ENTITY_NAME: 'patients',
+    PANEL_TITLE: translate('patients'),
+    DATATABLE_TITLE: translate('patients_list'),
+    ADD_NEW_ENTITY: translate('add_new_patients'),
+    ENTITY_NAME: translate('patients'),
   };
   const configPage = {
     entity,

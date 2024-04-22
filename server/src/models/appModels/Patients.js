@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const schema = new mongoose.Schema({
   removed: {
     type: Boolean,
-    default: false,
+    default: true,
   },
   enabled: {
     type: Boolean,
