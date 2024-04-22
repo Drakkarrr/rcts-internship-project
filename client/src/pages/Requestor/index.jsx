@@ -2,22 +2,20 @@ import CrudModule from '@/modules/CrudModule/CrudModule';
 import DynamicForm from '@/forms/DynamicForm';
 import { fields } from './config';
 
-import useLanguage from '@/locale/useLanguage';
-
-export default function Employees() {
-  const translate = useLanguage();
-  const entity = 'employees';
+export default function Requestor() {
+  const entity = 'requestor';
   const searchConfig = {
-    displayLabels: ['name'],
-    searchFields: 'name,phone,eamil',
+    displayLabels: ['firstname', 'lastname'],
+    searchFields: ['firstname', 'lastname'],
   };
-  const deleteModalLabels = ['name'];
+
+  const deleteModalLabels = [' ', 'firstname', 'lastname'];
 
   const Labels = {
-    PANEL_TITLE: translate('employees'),
-    DATATABLE_TITLE: translate('employees_list'),
-    ADD_NEW_ENTITY: translate('add_new_employees'),
-    ENTITY_NAME: translate('employees'),
+    PANEL_TITLE: 'Requestor Module',
+    DATATABLE_TITLE: 'Requestor Management',
+    ADD_NEW_ENTITY: 'Add New Requestor',
+    ENTITY_NAME: 'Requestor',
   };
   const configPage = {
     entity,

@@ -12,58 +12,41 @@ const schema = new mongoose.Schema({
 
   firstname: {
     type: String,
-    trim: true,
     required: true,
   },
-
+  middlename: {
+    type: String,
+  },
   lastname: {
     type: String,
-    trim: true,
     required: true,
   },
-
-  phone: {
-    type: Number,
-    trim: true,
-    required: true,
-  },
-
-  address: {
+  suffix: {
     type: String,
-    trim: true,
-    required: true,
   },
-
-  gender: String,
-
-  birthday: Date,
-
-  position: {
+  barangay: {
     type: String,
-    trim: true,
     required: true,
   },
-
   email: {
     type: String,
     trim: true,
     lowercase: true,
-    required: true,
   },
-
-  created: {
-    type: Date,
-    default: Date.now,
+  phone: {
+    type: String,
+    trim: true,
+    required: true,
   },
   updated: {
     type: Date,
     default: Date.now,
   },
-  isPublic: {
-    type: Boolean,
-    default: false,
+  created: {
+    type: Date,
+    default: Date.now,
   },
 });
 
 schema.plugin(require('mongoose-autopopulate'));
-module.exports = mongoose.model('Employees', schema);
+module.exports = mongoose.model('Requestor', schema);

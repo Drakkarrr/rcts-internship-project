@@ -1,3 +1,4 @@
+import Requestor from '@/pages/Requestor';
 import { lazy } from 'react';
 
 import { Navigate } from 'react-router-dom';
@@ -50,7 +51,6 @@ const Produk = lazy(() => import('@/pages/Produk'));
 
 const People = lazy(() => import('@/pages/People'));
 const Company = lazy(() => import('@/pages/Company'));
-const Employees = lazy(() => import('@/pages/Employees'));
 
 const About = lazy(() => import('@/pages/About'));
 const Currency = lazy(() => import('@/pages/Currency'));
@@ -174,10 +174,14 @@ let routes = {
       path: '/payment/update/:id',
       element: <PaymentUpdate />,
     },
-    // {
-    //   path: '/employee',
-    //   element: <Employee />,
-    // },
+    {
+      path: '/requestors',
+      element: <Requestor />,
+    },
+    {
+      path: '/employees',
+      element: <Employee />,
+    },
     {
       path: '/user-management',
       element: <Admin />,
