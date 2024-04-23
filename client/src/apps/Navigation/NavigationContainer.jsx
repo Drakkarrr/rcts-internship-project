@@ -140,11 +140,11 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <ReconciliationOutlined />,
       label: <Link to={'/events'}>Events</Link>,
     },
-    {
-      key: 'employee',
-      icon: <UserOutlined />,
-      label: <Link to={'/employee'}>People</Link>,
-    },
+    // {
+    //   key: 'employee',
+    //   icon: <UserOutlined />,
+    //   label: <Link to={'/employee'}>People</Link>,
+    // },
     {
       key: 'requestors',
       icon: <UserOutlined />,
