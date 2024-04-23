@@ -9,14 +9,14 @@ export default function Employee() {
   const entity = 'employee';
   const searchConfig = {
     displayLabels: ['firstname'],
-    searchFields: 'firstname',
+    searchFields: ['firstname', 'lastname'],
   };
 
-  const deleteModalLabels = [' ', 'firstname'];
+  const deleteModalLabels = [' ', 'firstname', 'lastname'];
 
   const Labels = {
     PANEL_TITLE: 'Employee Management',
-    DATATABLE_TITLE: 'Employee Module',
+    DATATABLE_TITLE: 'Employees Module',
     ADD_NEW_ENTITY: 'Add New Employee',
     ENTITY_NAME: 'Employee',
   };
