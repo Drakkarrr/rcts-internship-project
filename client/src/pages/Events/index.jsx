@@ -2,23 +2,20 @@ import CrudModule from '@/modules/CrudModule/CrudModule';
 import DynamicForm from '@/forms/DynamicForm';
 import { fields } from './config';
 
-import useLanguage from '@/locale/useLanguage';
-
-export default function Company() {
-  const translate = useLanguage();
-  const entity = 'company';
+export default function Events() {
+  const entity = 'events';
   const searchConfig = {
     displayLabels: ['name'],
-    searchFields: 'name,phone,eamil',
+    searchFields: 'name',
   };
 
   const deleteModalLabels = [' ', 'name'];
 
   const Labels = {
-    PANEL_TITLE: translate('company'),
-    DATATABLE_TITLE: translate('company_list'),
-    ADD_NEW_ENTITY: translate('add_new_company'),
-    ENTITY_NAME: translate('company'),
+    PANEL_TITLE: 'Events Management',
+    DATATABLE_TITLE: 'Events Module',
+    ADD_NEW_ENTITY: 'Add New Event',
+    ENTITY_NAME: 'Events',
   };
   const configPage = {
     entity,

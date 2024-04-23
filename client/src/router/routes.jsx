@@ -13,7 +13,7 @@ const Order = lazy(() => import('@/pages/Order'));
 const Patients = lazy(() => import('@/pages/Patients'));
 const Invoice = lazy(() => import('@/pages/Invoice'));
 const InvoiceCreate = lazy(() => import('@/pages/Invoice/InvoiceCreate'));
-
+const Events = lazy(() => import('@/pages/Events'));
 const InvoiceRead = lazy(() => import('@/pages/Invoice/InvoiceRead'));
 const InvoiceUpdate = lazy(() => import('@/pages/Invoice/InvoiceUpdate'));
 const InvoiceRecordPayment = lazy(() => import('@/pages/Invoice/InvoiceRecordPayment'));
@@ -175,6 +175,10 @@ let routes = {
       element: <PaymentUpdate />,
     },
     {
+      path: '/events',
+      element: <Events />,
+    },
+    {
       path: '/requestors',
       element: <Requestor />,
     },
@@ -252,7 +256,7 @@ let routes = {
       element: <Expense />,
     },
     {
-      path: '/events',
+      path: '/expense',
       element: <ExpenseCategory />,
     },
     {
