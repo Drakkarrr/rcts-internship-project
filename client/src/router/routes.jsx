@@ -50,7 +50,6 @@ const Produk = lazy(() => import('@/pages/Produk'));
 
 const People = lazy(() => import('@/pages/People'));
 const Company = lazy(() => import('@/pages/Company'));
-const Employees = lazy(() => import('@/pages/Employees'));
 
 const About = lazy(() => import('@/pages/About'));
 const Currency = lazy(() => import('@/pages/Currency'));
@@ -89,6 +88,10 @@ let routes = {
     {
       path: '/clients',
       element: <Customer />,
+    },
+    {
+      path: '/employees',
+      element: <Employee />,
     },
     {
       path: '/employee',

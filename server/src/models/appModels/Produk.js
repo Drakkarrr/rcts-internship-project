@@ -1,4 +1,3 @@
-const { company } = require('@/locale/translation/az_az');
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({

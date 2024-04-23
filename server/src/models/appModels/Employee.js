@@ -10,8 +10,6 @@ const employeeSchema = new mongoose.Schema({
     default: true,
   },
 
-  isAdmin: { type: mongoose.Schema.ObjectId, ref: 'Admin' },
-
   firstname: {
     type: String,
     trim: true,
@@ -25,20 +23,10 @@ const employeeSchema = new mongoose.Schema({
   },
 
   phone: {
-    type: Number,
-    trim: true,
-    required: true,
-  },
-
-  address: {
     type: String,
     trim: true,
     required: true,
   },
-
-  gender: String,
-
-  birthday: Date,
 
   position: {
     type: String,
@@ -50,65 +38,8 @@ const employeeSchema = new mongoose.Schema({
     type: String,
     trim: true,
     lowercase: true,
-    required: true,
   },
 
-  // idCardNumber: {
-  //   type: String,
-  //   trim: true,
-  // },
-
-  // photo: {
-  //   type: String,
-  //   trim: true,
-  // },
-
-  // headerImage: {
-  //   type: String,
-  //   trim: true,
-  // },
-
-  // customField: [
-  //   {
-  //     fieldName: {
-  //       type: String,
-  //       trim: true,
-  //       lowercase: true,
-  //     },
-  //     fieldType: {
-  //       type: String,
-  //       trim: true,
-  //       lowercase: true,
-  //       default: 'string',
-  //     },
-  //     fieldValue: {},
-  //   },
-  // ],
-
-  // images: [
-  //   {
-  //     id: String,
-  //     name: String,
-  //     path: String,
-  //     description: String,
-  //     isPublic: {
-  //       type: Boolean,
-  //       default: true,
-  //     },
-  //   },
-  // ],
-  // files: [
-  //   {
-  //     id: String,
-  //     name: String,
-  //     path: String,
-  //     description: String,
-  //     isPublic: {
-  //       type: Boolean,
-  //       default: true,
-  //     },
-  //   },
-  // ],
   created: {
     type: Date,
     default: Date.now,
@@ -117,7 +48,10 @@ const employeeSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  isPublic: {
+    type: Boolean,
+    default: false,
+  },
 });
-employeeSchema.plugin(require('mongoose-autopopulate'));
 
 module.exports = mongoose.model('Employee', employeeSchema);
