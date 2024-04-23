@@ -109,6 +109,16 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <TagsOutlined />,
       label: <Link to={'/category/product'}>Produ Cat</Link>,
     },
+    {
+      key: 'produk',
+      icon: <TagOutlined />,
+      label: <Link to={'/produk'}>Produk</Link>,
+    },
+    {
+      key: 'categoryproduk',
+      icon: <TagsOutlined />,
+      label: <Link to={'/category/produk'}>ProdukDog</Link>,
+    },
 
     {
       key: 'appointments',

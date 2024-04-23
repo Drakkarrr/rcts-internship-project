@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const productCategorySchema = new mongoose.Schema({
+const produkDogSchema = new mongoose.Schema({
   removed: {
     type: Boolean,
     default: false,
@@ -27,7 +27,7 @@ const productCategorySchema = new mongoose.Schema({
   },
   parentCategory: {
     type: mongoose.Schema.ObjectId,
-    ref: 'ProductCategory',
+    ref: 'ProdukDog',
   },
 
   title: String,
@@ -73,4 +73,4 @@ const productCategorySchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('ProductCategory', productCategorySchema);
+module.exports = mongoose.model('ProdukDog', produkDogSchema);

@@ -41,8 +41,12 @@ const OfferUpdate = lazy(() => import('@/pages/Offer/OfferUpdate'));
 
 const ExpenseCategory = lazy(() => import('@/pages/ExpenseCategory'));
 const Expense = lazy(() => import('@/pages/Expense'));
+
 const ProductCategory = lazy(() => import('@/pages/ProductCategory'));
 const Product = lazy(() => import('@/pages/Product'));
+
+const ProdukDog = lazy(() => import('@/pages/ProdukDog'));
+const Produk = lazy(() => import('@/pages/Produk'));
 
 const People = lazy(() => import('@/pages/People'));
 const Company = lazy(() => import('@/pages/Company'));
@@ -105,6 +109,14 @@ let routes = {
     {
       path: '/category/product',
       element: <ProductCategory />,
+    },
+    {
+      path: '/produk',
+      element: <Produk />,
+    },
+    {
+      path: '/category/produk',
+      element: <ProdukDog />,
     },
     {
       path: '/inventory',
