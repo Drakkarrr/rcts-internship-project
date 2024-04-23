@@ -10,35 +10,21 @@ const schema = new mongoose.Schema({
     default: true,
   },
 
-  firstname: {
-    type: String,
-    required: true,
-  },
-  middlename: {
-    type: String,
-  },
-  lastname: {
-    type: String,
-    required: true,
-  },
-  suffix: {
-    type: String,
-  },
-  barangay: {
-    type: String,
-    required: true,
-  },
-  email: {
+  name: {
     type: String,
     trim: true,
-    lowercase: true,
+    required: true,
   },
-  phone: {
+  description: {
     type: String,
     trim: true,
     required: true,
   },
   created: {
+    type: Date,
+    default: Date.now,
+  },
+  updated: {
     type: Date,
     default: Date.now,
   },
