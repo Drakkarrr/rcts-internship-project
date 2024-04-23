@@ -29,6 +29,7 @@ const productCategorySchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'ProductCategory',
   },
+  company: { type: mongoose.Schema.ObjectId, ref: 'Company' },
 
   title: String,
   tags: [String],

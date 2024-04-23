@@ -29,6 +29,17 @@ export const fields = {
     type: 'phone',
     required: true,
   },
+  company: {
+    type: 'search',
+    entity: 'company',
+    renderAsTag: true,
+    redirectLabel: 'Add New Company',
+    withRedirect: true,
+    urlToRedirect: '/company',
+    displayLabels: ['name'],
+    searchFields: 'name',
+    dataIndex: ['company', 'name'],
+  },
 
   // color: {
   //   type: 'color',
