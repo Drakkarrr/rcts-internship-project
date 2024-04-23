@@ -2,19 +2,19 @@
   {
     "settingCategory": "email_settings",
     "settingKey": "email_domain",
-    "settingValue": "idurarapp.com",
+    "settingValue": "rctsapp.com",
     "valueType": "string"
   },
   {
     "settingCategory": "email_settings",
     "settingKey": "email_reply_to",
-    "settingValue": "reply@idurarapp.com",
+    "settingValue": "reply@rctsapp.com",
     "valueType": "string"
   },
   {
     "settingCategory": "email_settings",
     "settingKey": "email_from",
-    "settingValue": "IDURAR ERP CRM",
+    "settingValue": "RCTS ERP CRM",
     "valueType": "string"
   }
 ]
