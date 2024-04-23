@@ -146,6 +146,11 @@ function Sidebar({ collapsible, isMobile = false }) {
       label: <Link to={'/employee'}>People</Link>,
     },
     {
+      key: 'requestors',
+      icon: <UserOutlined />,
+      label: <Link to={'/requestors'}>Requestors</Link>,
+    },
+    {
       key: 'employees',
       icon: <UserOutlined />,
       label: <Link to={'/employees'}>Employees</Link>,

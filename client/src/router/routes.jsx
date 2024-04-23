@@ -1,3 +1,4 @@
+import Requestor from '@/pages/Requestor';
 import { lazy } from 'react';
 
 import { Navigate } from 'react-router-dom';
@@ -90,10 +91,6 @@ let routes = {
       element: <Customer />,
     },
     {
-      path: '/employees',
-      element: <Employee />,
-    },
-    {
       path: '/employee',
       element: <People />,
     },
@@ -177,10 +174,14 @@ let routes = {
       path: '/payment/update/:id',
       element: <PaymentUpdate />,
     },
-    // {
-    //   path: '/employee',
-    //   element: <Employee />,
-    // },
+    {
+      path: '/requestors',
+      element: <Requestor />,
+    },
+    {
+      path: '/employees',
+      element: <Employee />,
+    },
     {
       path: '/user-management',
       element: <Admin />,

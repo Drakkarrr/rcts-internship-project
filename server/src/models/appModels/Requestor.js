@@ -38,11 +38,15 @@ const schema = new mongoose.Schema({
     trim: true,
     required: true,
   },
-
+  updated: {
+    type: Date,
+    default: Date.now,
+  },
   created: {
     type: Date,
     default: Date.now,
   },
 });
 
-module.exports = mongoose.model('Currency', schema);
+schema.plugin(require('mongoose-autopopulate'));
+module.exports = mongoose.model('Requestor', schema);
