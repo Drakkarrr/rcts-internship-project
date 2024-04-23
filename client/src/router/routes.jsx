@@ -115,7 +115,7 @@ let routes = {
       element: <Produk />,
     },
     {
-      path: '/category/produk',
+      path: '/categoryproduk',
       element: <ProdukDog />,
     },
     {
