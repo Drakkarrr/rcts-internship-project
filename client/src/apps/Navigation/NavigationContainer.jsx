@@ -57,84 +57,84 @@ function Sidebar({ collapsible, isMobile = false }) {
       icon: <DashboardOutlined />,
       label: <Link to={'/'}>{translate('dashboard')}</Link>,
     },
-    {
-      key: 'customer',
-      icon: <CustomerServiceOutlined />,
-      label: <Link to={'/clients'}>Clients</Link>,
-    },
-    {
-      key: 'company',
-      icon: <ShopOutlined />,
-      label: <Link to={'/company'}>{translate('companies')}</Link>,
-    },
-    {
-      key: 'lead',
-      icon: <FilterOutlined />,
-      label: <Link to={'/lead'}>{translate('leads')}</Link>,
-    },
-    {
-      key: 'offer',
-      icon: <FileOutlined />,
-      label: <Link to={'/offer'}>{translate('offers')}</Link>,
-    },
-    {
-      key: 'invoice',
-      icon: <ContainerOutlined />,
-      label: <Link to={'/invoice'}>{translate('invoices')}</Link>,
-    },
-    {
-      key: 'quote',
-      icon: <FileSyncOutlined />,
-      label: <Link to={'/quote'}>Proforma Inv</Link>,
-    },
-    {
-      key: 'payment',
-      icon: <CreditCardOutlined />,
-      label: <Link to={'/payment'}>{translate('payments')}</Link>,
-    },
+    // {
+    //   key: 'customer',
+    //   icon: <CustomerServiceOutlined />,
+    //   label: <Link to={'/clients'}>Clients</Link>,
+    // },
+    // {
+    //   key: 'company',
+    //   icon: <ShopOutlined />,
+    //   label: <Link to={'/company'}>{translate('companies')}</Link>,
+    // },
+    // {
+    //   key: 'lead',
+    //   icon: <FilterOutlined />,
+    //   label: <Link to={'/lead'}>{translate('leads')}</Link>,
+    // },
+    // {
+    //   key: 'offer',
+    //   icon: <FileOutlined />,
+    //   label: <Link to={'/offer'}>{translate('offers')}</Link>,
+    // },
+    // {
+    //   key: 'invoice',
+    //   icon: <ContainerOutlined />,
+    //   label: <Link to={'/invoice'}>{translate('invoices')}</Link>,
+    // },
+    // {
+    //   key: 'quote',
+    //   icon: <FileSyncOutlined />,
+    //   label: <Link to={'/quote'}>Proforma Inv</Link>,
+    // },
+    // {
+    //   key: 'payment',
+    //   icon: <CreditCardOutlined />,
+    //   label: <Link to={'/payment'}>{translate('payments')}</Link>,
+    // },
 
-    {
-      key: 'paymentMode',
-      icon: <CreditCardOutlined />,
-      label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,
-    },
+    // {
+    //   key: 'paymentMode',
+    //   icon: <CreditCardOutlined />,
+    //   label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,
+    // },
 
-    {
-      key: 'product',
-      icon: <TagOutlined />,
-      label: <Link to={'/product'}>{translate('products')}</Link>,
-    },
-    {
-      key: 'categoryproduct',
-      icon: <TagsOutlined />,
-      label: <Link to={'/category/product'}>Produ Cat</Link>,
-    },
-    {
-      key: 'produk',
-      icon: <TagOutlined />,
-      label: <Link to={'/produk'}>Produk</Link>,
-    },
-    {
-      key: 'categoryproduk',
-      icon: <TagsOutlined />,
-      label: <Link to={'/categoryproduk'}>ProdukDog</Link>,
-    },
+    // {
+    //   key: 'product',
+    //   icon: <TagOutlined />,
+    //   label: <Link to={'/product'}>{translate('products')}</Link>,
+    // },
+    // {
+    //   key: 'categoryproduct',
+    //   icon: <TagsOutlined />,
+    //   label: <Link to={'/category/product'}>Produ Cat</Link>,
+    // },
+    // {
+    //   key: 'produk',
+    //   icon: <TagOutlined />,
+    //   label: <Link to={'/produk'}>Produk</Link>,
+    // },
+    // {
+    //   key: 'categoryproduk',
+    //   icon: <TagsOutlined />,
+    //   label: <Link to={'/categoryproduk'}>ProdukDog</Link>,
+    // },
 
-    {
-      key: 'appointments',
-      icon: <WalletOutlined />,
-      label: <Link to={'/appointments'}>Appointments</Link>,
-    },
-    {
-      key: 'patients',
-      icon: <WalletOutlined />,
-      label: <Link to={'/patients'}>Patients</Link>,
-    },
-    {
-      key: 'requestor',
-      icon: <CreditCardOutlined />,
-      label: <Link to={'/requestor'}>Requestor</Link>,
-    },
+    // {
+    //   key: 'appointments',
+    //   icon: <WalletOutlined />,
+    //   label: <Link to={'/appointments'}>Appointments</Link>,
+    // },
+    // {
+    //   key: 'patients',
+    //   icon: <WalletOutlined />,
+    //   label: <Link to={'/patients'}>Patients</Link>,
+    // },
+    // {
+    //   key: 'requestor',
+    //   icon: <CreditCardOutlined />,
+    //   label: <Link to={'/requestor'}>Requestor</Link>,
+    // },
 
     {
       key: 'events',
@@ -162,12 +162,6 @@ function Sidebar({ collapsible, isMobile = false }) {
       key: 'settings',
       icon: <SettingOutlined />,
       children: [
-        // {
-        //   key: 'admin',
-        //   // icon: <TeamOutlined />,
-        //   label: <Link to={'/admin'}>{translate('admin')}</Link>,
-        // },
-
         {
           key: 'generalSettings',
           label: <Link to={'/settings'}>{translate('settings')}</Link>,
@@ -176,27 +170,6 @@ function Sidebar({ collapsible, isMobile = false }) {
           key: 'profile',
           label: <Link to={'/profile'}>Profile</Link>,
         },
-        // {
-        //   key: 'currency',
-        //   label: <Link to={'/settings/currency'}>{translate('currencies')}</Link>,
-        // },
-
-        // {
-        //   key: 'emailTemplates',
-        //   label: <Link to={'/email'}>{translate('email_templates')}</Link>,
-        // },
-        // {
-        //   key: 'paymentMode',
-        //   label: <Link to={'/payment/mode'}>{translate('payments_mode')}</Link>,
-        // },
-        // {
-        //   key: 'taxes',
-        //   label: <Link to={'/taxes'}>{translate('taxes')}</Link>,
-        // },
-        // {
-        //   key: 'about',
-        //   label: <Link to={'/about'}>{translate('about')}</Link>,
-        // },
       ],
     },
   ];
