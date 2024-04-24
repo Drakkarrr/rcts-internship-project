@@ -14,7 +14,7 @@ export default function Appointments() {
   const Labels = {
     PANEL_TITLE: 'Appointments Management',
     DATATABLE_TITLE: 'Appointments Module',
-    ADD_NEW_ENTITY: 'Add New Appointments',
+    ADD_NEW_ENTITY: 'Add New Appointment',
     ENTITY_NAME: 'Appointments',
   };
   const configPage = {
