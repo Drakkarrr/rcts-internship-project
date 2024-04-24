@@ -1,3 +1,4 @@
+import Appointments from '@/pages/Appointments';
 import Requestor from '@/pages/Requestor';
 import { lazy } from 'react';
 
@@ -173,6 +174,10 @@ let routes = {
     {
       path: '/payment/update/:id',
       element: <PaymentUpdate />,
+    },
+    {
+      path: '/appointments',
+      element: <Appointments />,
     },
     {
       path: '/events',
