@@ -12,8 +12,8 @@ export default function Requestor() {
   const deleteModalLabels = [' ', 'firstname', 'lastname'];
 
   const Labels = {
-    PANEL_TITLE: 'Requestor Module',
-    DATATABLE_TITLE: 'Requestor Management',
+    PANEL_TITLE: 'Requestor Management',
+    DATATABLE_TITLE: 'Requestor Module',
     ADD_NEW_ENTITY: 'Add New Requestor',
     ENTITY_NAME: 'Requestor',
   };
