@@ -12,6 +12,8 @@ const schema = new mongoose.Schema({
 
   requestor: { type: mongoose.Schema.ObjectId, ref: 'Requestor', autopopulate: true },
 
+  events: { type: mongoose.Schema.ObjectId, ref: 'Events', autopopulate: true },
+
   name: {
     type: String,
     required: true,

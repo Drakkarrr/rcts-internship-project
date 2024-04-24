@@ -9,6 +9,16 @@ export const fields = {
     dataIndex: ['requestor', 'firstname'],
     feedback: 'requestor',
   },
+  events: {
+    required: true,
+    type: 'search',
+    label: 'events',
+    entity: 'events',
+    displayLabels: ['name'],
+    searchFields: 'name',
+    dataIndex: ['events', 'name'],
+    feedback: 'events',
+  },
   name: {
     type: 'string',
     required: true,
