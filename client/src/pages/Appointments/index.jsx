@@ -2,20 +2,20 @@ import CrudModule from '@/modules/CrudModule/CrudModule';
 import DynamicForm from '@/forms/DynamicForm';
 import { fields } from './config';
 
-export default function Requestor() {
-  const entity = 'requestor';
+export default function Appointments() {
+  const entity = 'appointments';
   const searchConfig = {
-    displayLabels: ['firstname', 'lastname'],
-    searchFields: ['firstname', 'lastname'],
+    displayLabels: ['name'],
+    searchFields: ['name'],
   };
 
-  const deleteModalLabels = [' ', 'firstname', 'lastname'];
+  const deleteModalLabels = [' ', 'name'];
 
   const Labels = {
-    PANEL_TITLE: 'Requestor Management',
-    DATATABLE_TITLE: 'Requestor Module',
-    ADD_NEW_ENTITY: 'Add New Requestor',
-    ENTITY_NAME: 'Requestor',
+    PANEL_TITLE: 'Appointments Management',
+    DATATABLE_TITLE: 'Appointments Module',
+    ADD_NEW_ENTITY: 'Add New Appointments',
+    ENTITY_NAME: 'Appointments',
   };
   const configPage = {
     entity,

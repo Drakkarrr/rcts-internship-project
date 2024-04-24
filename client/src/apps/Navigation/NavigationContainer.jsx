@@ -137,6 +137,11 @@ function Sidebar({ collapsible, isMobile = false }) {
     // },
 
     {
+      key: 'appointments',
+      icon: <UserOutlined />,
+      label: <Link to={'/appointments'}>Appointments</Link>,
+    },
+    {
       key: 'events',
       icon: <UserOutlined />,
       label: <Link to={'/events'}>Events</Link>,
