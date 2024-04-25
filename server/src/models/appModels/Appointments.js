@@ -18,7 +18,24 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-
+  'appointment Type': {
+    type: String,
+    enum: ['meeting', 'call', 'email', 'chat'],
+    required: true,
+  },
+  'appointment To': {
+    type: String,
+    enum: ['company', 'people'],
+    required: true,
+  },
+  schedule: {
+    type: Date,
+    required: true,
+  },
+  purpose: {
+    type: String,
+    required: true,
+  },
   // type: {
   //   type: String,
   //   default: 'company',

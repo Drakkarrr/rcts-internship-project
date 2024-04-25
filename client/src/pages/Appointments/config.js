@@ -23,6 +23,24 @@ export const fields = {
     type: 'string',
     required: true,
   },
+  'appointment Type': {
+    type: String,
+    enum: ['meeting', 'call', 'email', 'chat'],
+    required: true,
+  },
+  'appointment To': {
+    type: String,
+    enum: ['company', 'people'],
+    required: true,
+  },
+  schedule: {
+    type: 'date',
+    required: true,
+  },
+  purpose: {
+    type: 'string',
+    required: true,
+  },
   created: {
     type: 'date',
     required: true,
