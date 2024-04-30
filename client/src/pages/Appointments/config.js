@@ -28,6 +28,31 @@ export const fields = {
     type: 'string',
     required: true,
   },
+  barangay: {
+    required: true,
+    type: 'selectWithFeedback',
+    // renderAsTag: true,
+    hasFeedback: true,
+    options: [
+      { value: 'barangay 1', label: 'barangay 1' },
+      { value: 'barangay 2', label: 'barangay 2' },
+      { value: 'barangay 3', label: 'barangay 3' },
+      { value: 'barangay 4', label: 'barangay 4' },
+      { value: 'barangay 5', label: 'barangay 5' },
+    ],
+  },
+  appointmentType: {
+    type: 'selectWithFeedback',
+    label: 'appointment type',
+    renderAsTag: true,
+    hasFeedback: true,
+    options: [
+      { value: 'walk in', label: 'walk in' },
+      { value: 'online', label: 'online' },
+    ],
+    required: true,
+  },
+
   created: {
     type: 'date',
     required: true,
