@@ -2,12 +2,15 @@ export const fields = {
   requestor: {
     required: true,
     type: 'search',
+    renderAsTag: true,
     label: 'requestor',
     entity: 'requestor',
+    redirectLabel: 'Add New Requestor',
+    withRedirect: true,
+    urlToRedirect: '/requestor',
     displayLabels: ['firstname', 'lastname'],
     searchFields: 'firstname,lastname',
     dataIndex: ['requestor', 'firstname'],
-    feedback: 'requestor',
   },
   events: {
     type: 'search',
