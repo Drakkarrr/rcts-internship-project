@@ -10,7 +10,6 @@ export const fields = {
     feedback: 'requestor',
   },
   events: {
-    required: true,
     type: 'search',
     label: 'events',
     entity: 'events',
