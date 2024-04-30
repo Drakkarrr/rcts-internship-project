@@ -11,12 +11,15 @@ export const fields = {
   },
   events: {
     type: 'search',
+    renderAsTag: true,
     label: 'events',
     entity: 'events',
+    redirectLabel: 'Add New Event',
+    withRedirect: true,
+    urlToRedirect: '/events',
     displayLabels: ['name'],
     searchFields: 'name',
     dataIndex: ['events', 'name'],
-    feedback: 'events',
   },
   name: {
     type: 'string',
