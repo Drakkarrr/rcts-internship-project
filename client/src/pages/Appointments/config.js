@@ -31,7 +31,7 @@ export const fields = {
   barangay: {
     required: true,
     type: 'selectWithFeedback',
-    renderAsTag: true,
+    // renderAsTag: true,
     hasFeedback: true,
     options: [
       { value: 'barangay 1', label: 'barangay 1' },
@@ -40,6 +40,17 @@ export const fields = {
       { value: 'barangay 4', label: 'barangay 4' },
       { value: 'barangay 5', label: 'barangay 5' },
     ],
+  },
+  appointmentType: {
+    type: 'selectWithFeedback',
+    label: 'appointment type',
+    renderAsTag: true,
+    hasFeedback: true,
+    options: [
+      { value: 'walk in', label: 'walk in' },
+      { value: 'online', label: 'online' },
+    ],
+    required: true,
   },
 
   created: {

@@ -21,14 +21,16 @@ const schema = new mongoose.Schema({
   barangay: {
     type: String,
     trim: true,
+    enum: ['barangay 1', 'barangay 2', 'barangay 3', 'barangay 4', 'barangay 5'],
+    required: true,
   },
 
-  // type: {
-  //   type: String,
-  //   default: 'company',
-  //   enum: ['company', 'people'],
-  //   required: true,
-  // },
+  appointmentType: {
+    type: String,
+    default: 'walk in',
+    enum: ['walk in', 'online'],
+    required: true,
+  },
 
   // company: { type: mongoose.Schema.ObjectId, ref: 'Company', autopopulate: true },
   // people: { type: mongoose.Schema.ObjectId, ref: 'People', autopopulate: true },
