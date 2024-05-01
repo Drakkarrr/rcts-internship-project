@@ -28,6 +28,20 @@ export const fields = {
     type: 'string',
     required: true,
   },
+  barangay: {
+    required: true,
+    type: 'selectWithFeedback',
+    renderAsTag: true,
+    hasFeedback: true,
+    options: [
+      { value: 'barangay 1', label: 'barangay 1' },
+      { value: 'barangay 2', label: 'barangay 2' },
+      { value: 'barangay 3', label: 'barangay 3' },
+      { value: 'barangay 4', label: 'barangay 4' },
+      { value: 'barangay 5', label: 'barangay 5' },
+    ],
+  },
+
   created: {
     type: 'date',
     required: true,

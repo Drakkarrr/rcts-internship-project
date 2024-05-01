@@ -18,6 +18,10 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  barangay: {
+    type: String,
+    trim: true,
+  },
 
   // type: {
   //   type: String,
