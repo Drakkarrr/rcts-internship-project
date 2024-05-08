@@ -1,5 +1,3 @@
-import color from '@/utils/color';
-
 export const fields = {
   firstname: {
     type: 'string',

@@ -1,6 +1,4 @@
 import { Space, Layout, Divider, Typography } from 'antd';
-import logo from '@/style/images/idurar-crm-erp.svg';
-import useLanguage from '@/locale/useLanguage';
 import { useSelector } from 'react-redux';
 import { selectLangDirection } from '@/redux/translate/selectors';
 
@@ -8,7 +6,6 @@ const { Content } = Layout;
 const { Title, Text } = Typography;
 
 export default function SideContent() {
-  const translate = useLanguage();
   const langDirection = useSelector(selectLangDirection);
 
   return (
@@ -29,9 +26,10 @@ export default function SideContent() {
           height={63}
           width={220}
         /> */}
-        <h1>RCTS Logo Here!</h1>
+        <h1>Your Logo Here!</h1>
+
         <div className="space40"></div>
-        <Title level={3}>Brgy Managemnet System :</Title>
+        <Title level={3}>Brngy Management System</Title>
 
         <div className="space20"></div>
         <ul className="list-checked" style={{ paddingRight: 0 }}>
