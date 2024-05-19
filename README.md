@@ -50,4 +50,4 @@ Feel free to reach us out! All thanks to ResponsivCode Technology Solutions
 ![Landing page login](screenschots/general_settings_update_password.png)
 ![Landing page login](screenschots/general_settings_update_password_success.png)
 
-### Happy Coding! ^^
+### WIP ^^
