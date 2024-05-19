@@ -4,7 +4,7 @@ Our internship project - A barangay appointment management system, requestor inf
 
 ## Contributors
 
-Feel free to reach us out!
+Feel free to reach us out! All thanks to ResponsivCode Technology Solutions
 
 - [Junrey Lañas](https://www.facebook.com/profile.php?id=100010980994040) (Developer)
 - [Drexell Mingo](https://www.facebook.com/Drexell.John27) (Developer)
