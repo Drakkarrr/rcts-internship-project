@@ -1,4 +1,4 @@
-# Magnus Operational Management System
+# Brgy Operational Management System
 
 Our internship project - A barangay appointment management system, requestor informantion system and employee management system.
 
