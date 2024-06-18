@@ -6,7 +6,7 @@ import AuthLayout from '@/layout/AuthLayout';
 import SideContent from './SideContent';
 import SelectLanguage from '@/components/SelectLanguage';
 
-import logo from '@/style/images/idurar-crm-erp.svg';
+// import logo from '@/style/images/idurar-crm-erp.svg';
 import { selectLangDirection } from '@/redux/translate/selectors';
 import { useSelector } from 'react-redux';
 
@@ -24,7 +24,7 @@ const AuthModule = ({ authContent, AUTH_TITLE, isForRegistre = false }) => {
           margin: '0 auto',
         }}
       >
-        <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 0 }} span={0}>
+        {/* <Col xs={{ span: 24 }} sm={{ span: 24 }} md={{ span: 0 }} span={0}>
           <img
             src={logo}
             alt="Logo"
@@ -36,7 +36,7 @@ const AuthModule = ({ authContent, AUTH_TITLE, isForRegistre = false }) => {
             width={220}
           />
           <div className="space10" />
-        </Col>
+        </Col> */}
         <Title level={1}>{translate(AUTH_TITLE)}</Title>
 
         <Divider />
