@@ -6,7 +6,7 @@ Our internship project - A barangay appointment management system, requestor inf
 
 Feel free to reach us out! All thanks to ResponsivCode Technology Solutions
 
-- [Junrey Lañas](https://www.facebook.com/profile.php?id=100010980994040) (Developer)
+- [Junrey Lañas](https://www.facebook.com/profile.php?id=100010980994040) (Lead Developer)
 - [Drexell Mingo](https://www.facebook.com/Drexell.John27) (Developer)
 - [Jonric Manisan](https://www.facebook.com/riczy.08) (UI/UX Designer)
 - [Edric Pulgarinas](https://www.facebook.com/edric.pulgarinas.9) (UI/UX Designer)
