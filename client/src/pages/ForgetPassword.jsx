@@ -33,6 +33,7 @@ const ForgetPassword = () => {
         <Form
           name="signup"
           className="login-form"
+          layout="vertical"
           initialValues={{
             remember: true,
           }}
@@ -50,7 +51,13 @@ const ForgetPassword = () => {
     );
   };
   if (!isSuccess) {
-    return <AuthModule authContent={<FormContainer />} AUTH_TITLE="Forgot Password" />;
+    return (
+    <AuthModule
+      authContent={<FormContainer />}
+      AUTH_TITLE="Forgot Password"
+      AUTH_SUBTITLE="Enter your account email to continue"
+    />
+  );
   } else {
     return (
       <Result

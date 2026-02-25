@@ -4,6 +4,7 @@ const Joi = require('joi');
 const mongoose = require('mongoose');
 
 const shortid = require('shortid');
+const getAuthCookieOptions = require('./getAuthCookieOptions');
 
 const resetPassword = async (req, res, { userModel }) => {
   const UserPassword = mongoose.model(userModel + 'Password');
@@ -13,43 +14,18 @@ const resetPassword = async (req, res, { userModel }) => {
   const databasePassword = await UserPassword.findOne({ user: userId, removed: false });
   const user = await User.findOne({ _id: userId, removed: false }).exec();
 
-  if (!user.enabled && user.role === 'owner') {
-    const settings = useAppSettings();
-    const idurar_app_email = settings['idurar_app_email'];
-    const idurar_base_url = settings['idurar_base_url'];
-
-    const url = checkAndCorrectURL(idurar_base_url);
-
-    const link = url + '/verify/' + user._id + '/' + databasePassword.emailToken;
-
-    await sendMail({
-      email,
-      name: user.name,
-      link,
-      idurar_app_email,
-      emailToken: databasePassword.emailToken,
-    });
-
-    return res.status(403).json({
+  if (!databasePassword || !user)
+    return res.status(404).json({
       success: false,
       result: null,
-      message:
-        'your email account is not verified , check your email inbox to activate your account',
+      message: 'No account with this email has been registered.',
     });
-  }
 
   if (!user.enabled)
     return res.status(409).json({
       success: false,
       result: null,
       message: 'Your account is disabled, contact your account adminstrator',
-    });
-
-  if (!databasePassword || !user)
-    return res.status(404).json({
-      success: false,
-      result: null,
-      message: 'No account with this email has been registered.',
     });
 
   const isMatch = resetToken === databasePassword.resetToken;
@@ -62,12 +38,12 @@ const resetPassword = async (req, res, { userModel }) => {
 
   // validate
   const objectSchema = Joi.object({
-    password: Joi.string().required(),
+    password: Joi.string().min(8).required(),
     userId: Joi.string().required(),
     resetToken: Joi.string().required(),
   });
 
-  const { error, value } = objectSchema.validate({ password, userId, resetToken });
+  const { error } = objectSchema.validate({ password, userId, resetToken });
   if (error) {
     return res.status(409).json({
       success: false,
@@ -99,6 +75,8 @@ const resetPassword = async (req, res, { userModel }) => {
       emailToken: emailToken,
       resetToken: shortid.generate(),
       emailVerified: true,
+      failedLoginAttempts: 0,
+      lockUntil: null,
     },
     {
       new: true,
@@ -112,15 +90,7 @@ const resetPassword = async (req, res, { userModel }) => {
   )
     return res
       .status(200)
-      .cookie('token', token, {
-        maxAge: 24 * 60 * 60 * 1000,
-        sameSite: 'Lax',
-        httpOnly: true,
-        secure: false,
-        domain: req.hostname,
-        path: '/',
-        Partitioned: true,
-      })
+      .cookie('token', token, getAuthCookieOptions())
       .json({
         success: true,
         result: {

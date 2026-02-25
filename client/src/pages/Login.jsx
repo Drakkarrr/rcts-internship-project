@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import useLanguage from '@/locale/useLanguage';
-
 import { Form, Button } from 'antd';
 
 import { login } from '@/redux/auth/actions';
@@ -14,7 +12,6 @@ import Loading from '@/components/Loading';
 import AuthModule from '@/modules/AuthModule';
 
 const LoginPage = () => {
-  const translate = useLanguage();
   const { isLoading, isSuccess } = useSelector(selectAuth);
   const navigate = useNavigate();
   // const size = useSize();
@@ -57,7 +54,13 @@ const LoginPage = () => {
     );
   };
 
-  return <AuthModule authContent={<FormContainer />} AUTH_TITLE="Welcome Admin!" />;
+  return (
+    <AuthModule
+      authContent={<FormContainer />}
+      AUTH_TITLE="Welcome Admin!"
+      AUTH_SUBTITLE="Login to your account"
+    />
+  );
 };
 
 export default LoginPage;
