@@ -44,6 +44,7 @@ const ResetPassword = () => {
         <Form
           name="signup"
           className="login-form"
+          layout="vertical"
           initialValues={{
             remember: true,
           }}
@@ -60,7 +61,13 @@ const ResetPassword = () => {
       </Loading>
     );
   };
-  return <AuthModule authContent={<FormContainer />} AUTH_TITLE="Reset Password" />;
+  return (
+    <AuthModule
+      authContent={<FormContainer />}
+      AUTH_TITLE="Reset Password"
+      AUTH_SUBTITLE="Set a secure new password"
+    />
+  );
 };
 
 export default ResetPassword;

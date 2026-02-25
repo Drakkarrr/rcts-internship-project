@@ -31,6 +31,14 @@ const AdminPasswordSchema = new Schema({
     type: [String],
     default: [],
   },
+  failedLoginAttempts: {
+    type: Number,
+    default: 0,
+  },
+  lockUntil: {
+    type: Date,
+    default: null,
+  },
 });
 
 // AdminPasswordSchema.index({ user: 1 });

@@ -1,7 +1,132 @@
+.auth-page-layout,
+.auth-page-row {
+  min-height: 100vh;
+}
+
+.auth-form-column {
+  background: #f4f6fb;
+}
+
+.auth-side-column {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #1f6dc0 0%, #2d3e9d 52%, #3c469f 100%);
+}
+
+.auth-side-column::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: -170px;
+  width: 520px;
+  height: 1200px;
+  transform: rotate(20deg);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.auth-side-column::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 25%;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(30, 131, 255, 0.95);
+  box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.1);
+}
+
+.auth-form-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.auth-form-title {
+  margin-bottom: 0 !important;
+  color: #1e2a3b !important;
+  font-weight: 700 !important;
+}
+
+.auth-form-subtitle {
+  color: #51607a;
+  margin-top: 4px;
+}
+
+.login-form .ant-input,
+.login-form .ant-input-password {
+  border-radius: 4px;
+}
+
+.login-form .ant-form-item {
+  margin-bottom: 18px;
+}
+
+.login-form-button {
+  width: 100%;
+  background: #09be5a !important;
+  border-color: #09be5a !important;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.auth-form-options .ant-form-item-control-input-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-form-forgot {
+  color: #3e67b8;
+}
+
+.auth-hero-content {
+  position: relative;
+  min-height: 100vh;
+  max-width: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 44px !important;
+}
+
+.auth-hero-copy {
+  max-width: 360px;
+  z-index: 1;
+}
+
+.auth-hero-dots {
+  display: block;
+  width: 34px;
+  height: 64px;
+  margin-bottom: 22px;
+  opacity: 0.6;
+  background-image: radial-gradient(#bee0ff 2px, transparent 2px);
+  background-size: 10px 10px;
+}
+
+.auth-hero-title {
+  color: #ffffff !important;
+  font-size: clamp(2rem, 4vw, 3.2rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px !important;
+}
+
+.auth-hero-subtitle {
+  color: #dce7ff;
+  font-size: 1rem;
+  margin-bottom: 26px;
+  display: block;
+}
+
 .list-checked {
-  padding-left: 0px;
+  padding-left: 0;
   list-style: none;
 }
+
 .list-checked-item {
   position: relative;
   display: block;
@@ -24,8 +149,10 @@
   width: 1rem;
   height: 1rem;
   background-image: url(../images/checklist.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
   content: '';
-  margin-top: 0.125rem;
+  margin-top: 0.2rem;
 }
 
 .list-checked-item-right::before {
@@ -36,7 +163,82 @@
 }
 
 .sideContent * {
-  color: #4f5d75 !important;
+  color: inherit;
+}
+
+.auth-hero-illustration {
+  position: relative;
+  width: clamp(200px, 35vw, 340px);
+  height: clamp(160px, 30vw, 280px);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f7f9ff 0%, #e8efff 100%);
+  box-shadow: 0 22px 45px rgba(8, 19, 70, 0.35);
+  z-index: 1;
+}
+
+.hero-screen {
+  position: absolute;
+  left: 12%;
+  top: 12%;
+  width: 76%;
+  height: 58%;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 3px #cad7f5;
+}
+
+.hero-avatar {
+  position: absolute;
+  bottom: -14px;
+  left: -24px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #7cb4ff, #2f66e1);
+  box-shadow: 0 10px 25px rgba(20, 58, 156, 0.35);
+}
+
+.hero-lock {
+  position: absolute;
+  right: -20px;
+  top: -20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #1474ff;
+  box-shadow: 0 12px 22px rgba(17, 84, 197, 0.35);
+}
+
+@media (max-width: 767px) {
+  .auth-form-column {
+    background: #ffffff;
+  }
+
+  .auth-form-content {
+    min-height: auto;
+    justify-content: flex-start;
+    padding-top: 36px !important;
+  }
+
+  .login-form-button {
+    height: 44px;
+  }
+}
+
+
+.auth-security-hint {
+  display: block;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+.password-strength-meter {
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
+.password-strength-meter .ant-progress {
+  margin-bottom: 4px;
 }
 
 .authLayout {

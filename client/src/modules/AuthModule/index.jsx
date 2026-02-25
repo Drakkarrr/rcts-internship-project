@@ -6,10 +6,16 @@ import AuthLayout from '@/layout/AuthLayout';
 import SideContent from './SideContent';
 
 const { Content } = Layout;
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
-const AuthModule = ({ authContent, AUTH_TITLE, isForRegistre = false }) => {
+const AuthModule = ({
+  authContent,
+  AUTH_TITLE,
+  AUTH_SUBTITLE = "Login to your account",
+  isForRegistre = false,
+}) => {
   const translate = useLanguage();
+
   return (
     <AuthLayout sideContent={<SideContent />}>
       <Content

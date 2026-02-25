@@ -1,16 +1,11 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 
 const mongoose = require('mongoose');
 
-const checkAndCorrectURL = require('./checkAndCorrectURL');
-const sendMail = require('./sendMail');
-
-const { loadSettings } = require('@/middlewares/settings');
-const { useAppSettings } = require('@/settings');
-
 const authUser = require('./authUser');
+
+const MAX_FAILED_LOGIN_ATTEMPTS = Number(process.env.MAX_FAILED_LOGIN_ATTEMPTS || 5);
+const LOGIN_LOCK_MINUTES = Number(process.env.LOGIN_LOCK_MINUTES || 15);
 
 const login = async (req, res, { userModel }) => {
   const UserPasswordModel = mongoose.model(userModel + 'Password');
@@ -25,7 +20,7 @@ const login = async (req, res, { userModel }) => {
     password: Joi.string().required(),
   });
 
-  const { error, value } = objectSchema.validate({ email, password });
+  const { error } = objectSchema.validate({ email, password });
   if (error) {
     return res.status(409).json({
       success: false,
@@ -38,7 +33,6 @@ const login = async (req, res, { userModel }) => {
 
   const user = await UserModel.findOne({ email: email, removed: false });
 
-  // console.log(user);
   if (!user)
     return res.status(404).json({
       success: false,
@@ -48,6 +42,29 @@ const login = async (req, res, { userModel }) => {
 
   const databasePassword = await UserPasswordModel.findOne({ user: user._id, removed: false });
 
+  if (!databasePassword)
+    return res.status(404).json({
+      success: false,
+      result: null,
+      message: 'No account with this email has been registered.',
+    });
+
+  if (databasePassword.lockUntil && new Date(databasePassword.lockUntil) > new Date()) {
+    const retryAfterSeconds = Math.ceil(
+      (new Date(databasePassword.lockUntil).getTime() - Date.now()) / 1000
+    );
+
+    return res.status(423).json({
+      success: false,
+      result: null,
+      message: `Account temporarily locked due to multiple failed logins. Try again in ${Math.ceil(
+        retryAfterSeconds / 60
+      )} minute(s).`,
+      retryAfterSeconds,
+      failedLoginAttempts: databasePassword.failedLoginAttempts || 0,
+    });
+  }
+
   if (!user.enabled)
     return res.status(409).json({
       success: false,
@@ -55,8 +72,15 @@ const login = async (req, res, { userModel }) => {
       message: 'Your account is disabled, contact your account adminstrator',
     });
 
-  //  authUser if your has correct password
-  authUser(req, res, { user, databasePassword, password, UserPasswordModel });
+  // authUser if your has correct password
+  authUser(req, res, {
+    user,
+    databasePassword,
+    password,
+    UserPasswordModel,
+    maxFailedLoginAttempts: MAX_FAILED_LOGIN_ATTEMPTS,
+    loginLockMinutes: LOGIN_LOCK_MINUTES,
+  });
 };
 
 module.exports = login;
