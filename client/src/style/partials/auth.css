@@ -6,15 +6,15 @@
   position: relative;
   display: block;
   color: #677788;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   list-style: none;
 }
 
-.list-checked-item-right{
+.list-checked-item-right {
   padding-right: 1.75rem;
 }
 
-.list-checked-item-left{
+.list-checked-item-left {
   padding-left: 1.75rem;
 }
 
@@ -28,14 +28,50 @@
   margin-top: 0.125rem;
 }
 
-.list-checked-item-right::before{
+.list-checked-item-right::before {
   right: 0;
 }
-.list-checked-item-left::before{
+.list-checked-item-left::before {
   left: 0;
 }
 
-
 .sideContent * {
   color: #4f5d75 !important;
+}
+
+.authLayout {
+  min-height: 100vh;
+}
+
+.authSidePane {
+  background: linear-gradient(180deg, #f4f8ff 0%, #e6f0ff 100%);
+}
+
+.auth-module-chip {
+  border: 1px solid #dbe8ff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #ffffffb8;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .authFormPane {
+    min-height: auto !important;
+  }
+
+  .authContent {
+    padding-top: 28px !important;
+  }
+
+  .authSidePane {
+    min-height: auto !important;
+  }
+
+  .sideContent {
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
+  }
 }

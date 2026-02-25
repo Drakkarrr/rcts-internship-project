@@ -1,28 +1,31 @@
 # Brgy Operational Management System
 
-Our internship project - A barangay appointment management system, requestor informantion system and employee management system.
+Our internship project - a barangay appointment management, requestor information, and employee management system.
 
 ## Contributors
 
-Feel free to reach us out! All thanks to ResponsivCode Technology Solutions
+Feel free to reach us out! All thanks to ResponsivCode Technology Solutions.
 
 - [Junrey Lañas](https://www.facebook.com/profile.php?id=100010980994040) (Lead Developer)
 - [Drexell Mingo](https://www.facebook.com/Drexell.John27) (Developer)
 - [Jonric Manisan](https://www.facebook.com/riczy.08) (UI/UX Designer)
 - [Edric Pulgarinas](https://www.facebook.com/edric.pulgarinas.9) (UI/UX Designer)
 
-# Modules
+## Core Modules & Features
 
 - Employee Module
-- User Management
+- User Management (role-based access)
 - General Settings
 - Authentication
 - Forgot/Reset Password
-- Admin Creation (User access control)
-- Add requestor, events and appointments
-- And many more
+- Admin Creation (user access control)
+- Add requestor, events, and appointments
+- Responsive dashboard quick-access cards for core modules
+- Mobile-friendly navigation drawer and auth UI
 
-# Screenshots
+## Screenshots
+
+### Authentication
 
 ![Landing page login](screenschots/auth_login.png)
 ![Forgot password](screenschots/auth_forgot_password.png)
@@ -30,22 +33,26 @@ Feel free to reach us out! All thanks to ResponsivCode Technology Solutions
 ![Forgot password set new password](screenschots/auth_forgot_password_set_new_password.png)
 ![Forgot password set new password success](screenschots/auth_password_reset_success.png)
 
-![Landing page login](screenschots/appointment_create.png)
-![Landing page login](screenschots/appointment_schedule_status.png)
-![Landing page login](screenschots/clients_list.png)
-![Landing page login](screenschots/appointment_history.png)
-![Landing page login](screenschots/appointments_analytics.png)
-![Landing page login](screenschots/appointments_list.png)
+### Appointments and Requestors
 
-![Landing page login](screenschots/employee_add.png)
-![Landing page login](screenschots/employee_list.png)
+![Appointment create](screenschots/appointment_create.png)
+![Appointment schedule status](screenschots/appointment_schedule_status.png)
+![Clients list](screenschots/clients_list.png)
+![Appointment history](screenschots/appointment_history.png)
+![Appointments analytics](screenschots/appointments_analytics.png)
+![Appointments list](screenschots/appointments_list.png)
 
-![Landing page login](screenschots/calendar_sched.png)
-![Landing page login](screenschots/calendar_view.png)
+### Employees and Calendar
 
-![Landing page login](screenschots/requestor_add.png)
-![Landing page login](screenschots/user_list.png)
+![Employee add](screenschots/employee_add.png)
+![Employee list](screenschots/employee_list.png)
+![Calendar schedule](screenschots/calendar_sched.png)
+![Calendar view](screenschots/calendar_view.png)
 
-![Landing page login](screenschots/general_settings.png)
-![Landing page login](screenschots/general_settings_update_password.png)
-![Landing page login](screenschots/general_settings_update_password_success.png)
+### Settings and User Management
+
+![Requestor add](screenschots/requestor_add.png)
+![User list](screenschots/user_list.png)
+![General settings](screenschots/general_settings.png)
+![General settings update password](screenschots/general_settings_update_password.png)
+![General settings update password success](screenschots/general_settings_update_password_success.png)
