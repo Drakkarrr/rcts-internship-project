@@ -1,6 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import { Tag, Row, Col } from 'antd';
+import { Tag, Row, Col, Card, Space, Button } from 'antd';
+import { Link } from 'react-router-dom';
+import {
+  CalendarOutlined,
+  TeamOutlined,
+  UserSwitchOutlined,
+  SettingOutlined,
+  SafetyCertificateOutlined,
+} from '@ant-design/icons';
 import useLanguage from '@/locale/useLanguage';
 
 import { useMoney } from '@/settings';
@@ -18,6 +26,14 @@ import CustomerPreviewCard from './components/CustomerPreviewCard';
 
 import { selectMoneyFormat } from '@/redux/settings/selectors';
 import { useSelector } from 'react-redux';
+
+const CORE_MODULE_LINKS = [
+  { title: 'Appointments', path: '/appointments', icon: <CalendarOutlined /> },
+  { title: 'Requestors', path: '/requestors', icon: <TeamOutlined /> },
+  { title: 'Employees', path: '/employees', icon: <UserSwitchOutlined /> },
+  { title: 'User Management', path: '/user-management', icon: <SafetyCertificateOutlined /> },
+  { title: 'General Settings', path: '/settings', icon: <SettingOutlined /> },
+];
 
 export default function DashboardModule() {
   const translate = useLanguage();
@@ -140,6 +156,26 @@ export default function DashboardModule() {
   if (money_format_settings) {
     return (
       <>
+        <Row gutter={[16, 16]}>
+          {CORE_MODULE_LINKS.map((module) => (
+            <Col key={module.title} xs={24} sm={12} lg={8} xl={4}>
+              <Card size="small" className="shadow" style={{ height: '100%' }}>
+                <Space direction="vertical" size={8} style={{ width: '100%' }}>
+                  <Space>
+                    {module.icon}
+                    <strong>{module.title}</strong>
+                  </Space>
+                  <Link to={module.path}>
+                    <Button type="link" style={{ padding: 0 }}>
+                      Open module
+                    </Button>
+                  </Link>
+                </Space>
+              </Card>
+            </Col>
+          ))}
+        </Row>
+        <div className="space30"></div>
         <Row gutter={[32, 32]}>
           <SummaryCard
             title={translate('Invoices')}
@@ -173,7 +209,7 @@ export default function DashboardModule() {
         <div className="space30"></div>
         <Row gutter={[32, 32]}>
           <Col className="gutter-row w-full" sm={{ span: 24 }} md={{ span: 24 }} lg={{ span: 18 }}>
-            <div className="whiteBox shadow" style={{ height: 458 }}>
+            <div className="whiteBox shadow" style={{ minHeight: 458, height: '100%' }}>
               <Row className="pad20" gutter={[0, 0]}>
                 {statisticCards}
               </Row>

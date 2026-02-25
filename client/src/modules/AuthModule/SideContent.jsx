@@ -1,47 +1,102 @@
-import { Space, Layout, Typography } from 'antd';
+import { Space, Layout, Divider, Typography, Row, Col, Tag } from 'antd';
+import {
+  CalendarOutlined,
+  TeamOutlined,
+  UserSwitchOutlined,
+  SafetyCertificateOutlined,
+  SettingOutlined,
+} from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import { selectLangDirection } from '@/redux/translate/selectors';
 
 const { Content } = Layout;
 const { Title, Text } = Typography;
 
-const featureItems = [
-  'Appointment and event scheduling',
-  'Requestor and resident record management',
-  'Employee and access control tools',
-  'Analytics and reporting at a glance',
+const CORE_MODULES = [
+  {
+    label: 'Appointment Management',
+    icon: <CalendarOutlined />,
+  },
+  {
+    label: 'Requestor Information',
+    icon: <TeamOutlined />,
+  },
+  {
+    label: 'User Management',
+    icon: <UserSwitchOutlined />,
+  },
+  {
+    label: 'Secure Authentication',
+    icon: <SafetyCertificateOutlined />,
+  },
+  {
+    label: 'General Settings',
+    icon: <SettingOutlined />,
+  },
 ];
 
 export default function SideContent() {
   const langDirection = useSelector(selectLangDirection);
 
   return (
-    <Content className="sideContent auth-hero-content">
-      <div className="auth-hero-copy">
-        <span className="auth-hero-dots" aria-hidden="true" />
-        <Title className="auth-hero-title">Appointment Scheduling</Title>
-        <Text className="auth-hero-subtitle">Barangay Operational Management System</Text>
+    <Content
+      style={{
+        padding: '72px 30px 30px',
+        width: '100%',
+        maxWidth: '520px',
+        margin: '0 auto',
+      }}
+      className="sideContent"
+    >
+      <div style={{ width: '100%' }}>
+        <Tag color="blue" style={{ marginBottom: 16 }}>
+          Brgy Operational Management System
+        </Tag>
 
+        <Title level={2} style={{ marginBottom: 8 }}>
+          Manage appointments, records, and staff in one place.
+        </Title>
+        <Text type="secondary">
+          Built for barangay operations with modules shown in the project README and designed for
+          daily administrative workflows.
+        </Text>
+
+        <div className="space30"></div>
+        <Row gutter={[12, 12]}>
+          {CORE_MODULES.map((module) => (
+            <Col xs={24} sm={12} key={module.label}>
+              <div className="auth-module-chip">
+                <Space>
+                  {module.icon}
+                  <Text strong>{module.label}</Text>
+                </Space>
+              </div>
+            </Col>
+          ))}
+        </Row>
+
+        <div className="space30"></div>
+        <Title level={4}>Platform highlights</Title>
         <ul className="list-checked" style={{ paddingRight: 0 }}>
-          {featureItems.map((item) => (
+          {[
+            'Fully responsive authentication screens',
+            'Role-based access for staff and admins',
+            'Calendar-ready scheduling and event support',
+            'Secure account recovery (forgot/reset password)',
+          ].map((item) => (
             <li
               key={item}
               className={`list-checked-item ${
                 langDirection === 'rtl' ? 'list-checked-item-right' : 'list-checked-item-left'
               }`}
             >
-              <Space direction="vertical" size={0}>
+              <Space direction="vertical">
                 <Text strong>{item}</Text>
               </Space>
             </li>
           ))}
         </ul>
-      </div>
-
-      <div className="auth-hero-illustration" aria-hidden="true">
-        <div className="hero-screen" />
-        <div className="hero-avatar" />
-        <div className="hero-lock" />
+        <Divider />
       </div>
     </Content>
   );

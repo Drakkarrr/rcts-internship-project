@@ -1,32 +1,23 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Button, Drawer, Layout, Menu } from 'antd';
+import { Button, Drawer, Layout, Menu, Tag } from 'antd';
 
 import { useAppContext } from '@/context/appContext';
 
 import useLanguage from '@/locale/useLanguage';
 import logoIcon from '@/style/images/logo-icon.png';
-// import logoIcon from '@/style/images/logo-icon.svg';
-// import logoText from '@/style/images/logo-text.svg';
 
 import useResponsive from '@/hooks/useResponsive';
 
 import {
   SettingOutlined,
-  CustomerServiceOutlined,
-  ContainerOutlined,
-  FileSyncOutlined,
   DashboardOutlined,
-  TagOutlined,
-  TagsOutlined,
   UserOutlined,
-  CreditCardOutlined,
   MenuOutlined,
-  FileOutlined,
-  ShopOutlined,
-  FilterOutlined,
-  WalletOutlined,
-  ReconciliationOutlined,
+  TeamOutlined,
+  CalendarOutlined,
+  ScheduleOutlined,
+  SecurityScanOutlined,
 } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import { selectLangDirection } from '@/redux/translate/selectors';
@@ -40,13 +31,13 @@ export default function Navigation() {
 }
 
 function Sidebar({ collapsible, isMobile = false }) {
-  let location = useLocation();
+  const location = useLocation();
 
   const { state: stateApp, appContextAction } = useAppContext();
   const { isNavMenuClose } = stateApp;
   const { navMenu } = appContextAction;
-  const [showLogoApp, setLogoApp] = useState(isNavMenuClose);
-  const [currentPath, setCurrentPath] = useState(location.pathname.slice(1));
+  const [currentPath, setCurrentPath] = useState(location.pathname.slice(1) || 'dashboard');
+  const [openKeys, setOpenKeys] = useState(['settings']);
 
   const translate = useLanguage();
   const navigate = useNavigate();
@@ -55,71 +46,56 @@ function Sidebar({ collapsible, isMobile = false }) {
     {
       key: 'dashboard',
       icon: <DashboardOutlined />,
-      label: <Link to={'/'}>{translate('dashboard')}</Link>,
+      label: <Link to="/">{translate('dashboard')}</Link>,
     },
     {
       key: 'appointments',
-      icon: <UserOutlined />,
-      label: <Link to={'/appointments'}>Appointments</Link>,
+      icon: <CalendarOutlined />,
+      label: <Link to="/appointments">Appointments</Link>,
     },
     {
       key: 'events',
-      icon: <UserOutlined />,
-      label: <Link to={'/events'}>Events</Link>,
+      icon: <ScheduleOutlined />,
+      label: <Link to="/events">Events</Link>,
     },
     {
       key: 'requestors',
-      icon: <UserOutlined />,
-      label: <Link to={'/requestors'}>Requestors</Link>,
+      icon: <TeamOutlined />,
+      label: <Link to="/requestors">Requestor Information</Link>,
     },
     {
       key: 'employees',
       icon: <UserOutlined />,
-      label: <Link to={'/employees'}>Employees</Link>,
+      label: <Link to="/employees">Employee Module</Link>,
     },
     {
       key: 'user-management',
-      icon: <UserOutlined />,
-      label: <Link to={'/user-management'}>User Management</Link>,
+      icon: <SecurityScanOutlined />,
+      label: <Link to="/user-management">User Management</Link>,
     },
-
     {
       label: 'General Settings',
       key: 'settings',
       icon: <SettingOutlined />,
       children: [
         {
-          key: 'generalSettings',
-          label: <Link to={'/settings'}>{translate('settings')}</Link>,
+          key: 'settings',
+          label: <Link to="/settings">{translate('settings')}</Link>,
         },
         {
           key: 'profile',
-          label: <Link to={'/profile'}>Profile</Link>,
+          label: <Link to="/profile">Profile</Link>,
         },
       ],
     },
   ];
 
   useEffect(() => {
-    if (location)
-      if (currentPath !== location.pathname) {
-        if (location.pathname === '/') {
-          setCurrentPath('dashboard');
-        } else setCurrentPath(location.pathname.slice(1));
-      }
-  }, [location, currentPath]);
+    const routePath = location.pathname === '/' ? 'dashboard' : location.pathname.slice(1);
+    setCurrentPath(routePath);
+    setOpenKeys(routePath.startsWith('settings') || routePath === 'profile' ? ['settings'] : []);
+  }, [location.pathname]);
 
-  useEffect(() => {
-    if (isNavMenuClose) {
-      setLogoApp(isNavMenuClose);
-    }
-    const timer = setTimeout(() => {
-      if (!isNavMenuClose) {
-        setLogoApp(isNavMenuClose);
-      }
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [isNavMenuClose]);
   const onCollapse = () => {
     navMenu.collapse();
   };
@@ -131,13 +107,12 @@ function Sidebar({ collapsible, isMobile = false }) {
       collapsed={collapsible ? isNavMenuClose : collapsible}
       onCollapse={onCollapse}
       className="navigation"
-      width={256}
+      width={isMobile ? 250 : 256}
       style={{
-        // overflowX: 'hidden',
         height: '100vh',
         direction: langDirection,
-        position: isMobile ? 'absolute' : 'relative',
-        bottom: '20px',
+        position: isMobile ? 'relative' : 'relative',
+        bottom: isMobile ? 0 : '20px',
         ...(!isMobile && {
           background: 'none',
           border: 'none',
@@ -156,29 +131,24 @@ function Sidebar({ collapsible, isMobile = false }) {
         }}
       >
         <img src={logoIcon} alt="Logo" style={{ marginLeft: '-3px', height: '40px' }} />
-
-        {/* {!showLogoApp && (
-          <img
-            src={logoText}
-            alt="Logo"
-            style={{
-              marginTop: '3px',
-              marginLeft: '10px',
-              height: '38px',
-            }}
-          />
-        )} */}
-        <h2>CTS Logo</h2>
+        <div>
+          <h2 style={{ marginBottom: 0, lineHeight: '1.1' }}>Brgy OMS</h2>
+          <Tag color="blue" style={{ marginTop: 4 }}>
+            Responsive UI
+          </Tag>
+        </div>
       </div>
       <Menu
         items={items}
         mode="inline"
         theme={'light'}
         selectedKeys={[currentPath]}
+        openKeys={openKeys}
+        onOpenChange={setOpenKeys}
         style={{
           background: 'none',
           border: 'none',
-          width: 240,
+          width: isMobile ? '100%' : 240,
         }}
       />
     </Sider>

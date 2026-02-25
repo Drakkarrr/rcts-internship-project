@@ -19,17 +19,15 @@ const AuthModule = ({
   return (
     <AuthLayout sideContent={<SideContent />}>
       <Content
-        className="auth-form-content"
+        className="authContent"
         style={{
-          padding: isForRegistre ? '40px 30px 30px' : '90px 30px 30px',
-          maxWidth: '460px',
+          padding: isForRegistre ? '40px 30px 30px' : '80px 30px 30px',
+          maxWidth: '440px',
           margin: '0 auto',
         }}
       >
-        <Title level={2} className="auth-form-title">
-          {translate(AUTH_TITLE)}
-        </Title>
-        <Text className="auth-form-subtitle">{translate(AUTH_SUBTITLE)}</Text>
+        <Title level={1}>{translate(AUTH_TITLE)}</Title>
+
         <Divider />
         <div className="site-layout-content">{authContent}</div>
       </Content>
